@@ -12,6 +12,8 @@ Aula 04 (12/06/2019): Interações entre listas e vetores, fatores, concatenando
 
 Aula 05 (17/06/2019): Concatenando strings com paste(), matrizes & arrays
 
+Aula cancelada (24/06/2019): Feriado de São João
+
 Aula 06 (26/06/2019): Matrizes e data frames
 
 Aula cancelada (01/07/2019)
