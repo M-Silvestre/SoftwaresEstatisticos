@@ -1,23 +1,23 @@
-# Introdução a softwares estatísticos
+# IntroduÃ§Ã£o a softwares estatÃ­sticos
 # Data: 26/06/2019
 # Aula: 06
 # Assunto: Matrizes e dataframes
 
 rm(list(ls(all = TRUE)))
 
-# Matrizes (continuação) --------------------------------------------------
+# Matrizes (continuaÃ§Ã£o) --------------------------------------------------
 
 
-# Pra complementar, responda os exercícios abaixo
+# Pra complementar, responda os exercÃ­cios abaixo
 
-# 1) O que a função dim() retorn quando aplicado a um vetor?
+# 1) O que a funÃ§Ã£o dim() retorn quando aplicado a um vetor?
 
 # NULL
 
 # 2) S e is.matrix(x) retorna TRUE, o que is.array(x) retorna?
 
-# 3) Como você descreveria os três objetos a seguir? Sem executar
-# o código, o que se espera como resultado?
+# 3) Como vocÃª descreveria os trÃªs objetos a seguir? Sem executar
+# o cÃ³digo, o que se espera como resultado?
 
 x1 <- array(1:5, c(1,1,5))
 x2 <- array(1:5, c(1,5,1))
@@ -28,8 +28,8 @@ x2
 x3
 
 
-# Exercício: crie três vetores com três elementos inteiros, sejam
-# eles os objetos x, y, z. Combine os três vetores para se tornar
+# ExercÃ­cio: crie trÃªs vetores com trÃªs elementos inteiros, sejam
+# eles os objetos x, y, z. Combine os trÃªs vetores para se tornar
 # uma matriz 3 x 3 em que cada coluna representa um vetor. Altere
 # os nomes das linhas para a, b, e c, repectivamente
 
@@ -44,10 +44,10 @@ mat <- matrix(c(x,y,z), nrow = length(x), ncol = length(x), byrow = FALSE)
 
 rownames(mat) <- c("a", "b", "c")
 
-# Exercício: Crie um vetor v com 15 valores inteiros e converta-o
-# em uma matriz M (5 x 3). Faça isso de duas formas diferentes. Além
+# ExercÃ­cio: Crie um vetor v com 15 valores inteiros e converta-o
+# em uma matriz M (5 x 3). FaÃ§a isso de duas formas diferentes. AlÃ©m
 # disso, nomeie as linhas de l1 a l5 e as colunas de c1 a c3. Depois,
-# crie a matriz N a partir de M tal que N não possui nomes de linhas e colunas
+# crie a matriz N a partir de M tal que N nÃ£o possui nomes de linhas e colunas
 
 v <- 1:15
 
@@ -56,7 +56,7 @@ M <- matrix(v, nrow = 5, ncol = 3)
 rownames(M) <- paste("l", 1:nrow(M), sep = "") # ou 1:dim(M)[1]
 colnames(M) <- paste("c", 1:ncol(M), sep = "") # ou 1:dim(M)[2]
 
-# Também poderia usar-se o comando paste0()
+# TambÃ©m poderia usar-se o comando paste0()
 
 
 
@@ -64,13 +64,11 @@ colnames(M) <- paste("c", 1:ncol(M), sep = "") # ou 1:dim(M)[2]
 
 # Pesquisar pacote "tibble": data frames mais organizados
 
-# Sci-hub: artigos científicos
-
 # Por se tratar de uma estrutura bidimensional assim como matrizes, todos
-# os comandos como dim(), names(), colnames(), etc., poderão ser usados
-# é um dataframe.
+# os comandos como dim(), names(), colnames(), etc., poderÃ£o ser usados
+# Ã© um dataframe.
 
-# Podemons criar um dataframe usando a função data.frama() que possui
+# Podemons criar um dataframe usando a funÃ§Ã£o data.frama() que possui
 # como entrada vetores nomeados
 
 df <- data.frame(x= 1:3, y = c("a", "b", "c"))
@@ -80,7 +78,7 @@ str(df)
 df$x
 str(df)
 
-# OBS: por padrão, um data frame recebe um vetor de strings como
+# OBS: por padrÃ£o, um data frame recebe um vetor de strings como
 # fator. Isso pode ser alterado pelo argumento stringAsFactors
 
 df <- data.frame(x= 1:3, y = c("a", "b", "c"), stringsAsFactors = FALSE)
@@ -97,8 +95,8 @@ cbind(df, data.frame(z = 3:1))
 rbind(df, x = 10, y = "z")
 
 
-# OBS: É poosível que cada coluna de um data frame seja uma lista.
-# Essa é uma das características que tornam a linguagem R flexível.
+# OBS: Ã‰ poosÃ­vel que cada coluna de um data frame seja uma lista.
+# Essa Ã© uma das caracterÃ­sticas que tornam a linguagem R flexÃ­vel.
 df <- data.frame(x = 1:3)
 df$y <- list(1:2, 1:3, 1:4)
 df
@@ -106,7 +104,7 @@ df
 
 
 
-# Execício: um professor irá criar um data frame para armazenar
+# ExecÃ­cio: um professor irÃ¡ criar um data frame para armazenar
 # as notas de 5 alunos 
 
 alunos <- paste("Aluno", 1:5)
