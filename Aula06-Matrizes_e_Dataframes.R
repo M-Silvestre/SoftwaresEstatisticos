@@ -115,10 +115,3 @@ avaliacoes <- list(rnorm(3, 7, 2), rnorm(3, 7, 2), rnorm(3, 7, 2),
 df <- data.frame(aluno = alunos, notas = NA)
 
 df$notas <- avaliacoes
-
-lapply(X = df[,2], FUN = mean)
-
-
-
-iris <- iris[, -dim(iris)[2]]
-iris
