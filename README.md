@@ -19,3 +19,6 @@ Aula 06 (26/06/2019): Matrizes e data frames
 Aula cancelada (01/07/2019)
 
 Primeira Avaliação (03/07/2019)
+
+Aula 07 (08/07/2019): Data frames (continuação), comandos lapply() e apply(), adicionar e remover variáveis
+                      de um data frame, acessar subconjuntos de vetores e arrays, comando outer()
