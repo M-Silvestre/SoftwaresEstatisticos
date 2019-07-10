@@ -1,14 +1,14 @@
-# IntroduÁ„o a softwares estatÌsticos
-# Data: 26/06/2019
-# Aula: 06
+# Introdu√ß√£o a softwares estat√≠sticos
+# Data: 08/07/2019
+# Aula: 07
 # Assunto: Dataframes
 
-# Data frames (continuaÁ„o)------------------------------------
+# Data frames (continua√ß√£o)------------------------------------
 
 # Na aula passada, tentamos criar um data frame onde uma das
-# vari·veis È uma lista. Veja que primeiro criamos o data frame 
-# com a vari·vel vazia, e ent„o atribuÌmos a lista como valor.
-# O propÛsito foi mostrar que cada cÈlula de um data frame pode
+# vari√°veis √© uma lista. Veja que primeiro criamos o data frame 
+# com a vari√°vel vazia, e ent√£o atribu√≠mos a lista como valor.
+# O prop√≥sito foi mostrar que cada c√©lula de um data frame pode
 # ser um vetor
 
 alunos <- paste("Aluno", 1:5, sep = "_")
@@ -20,7 +20,7 @@ df <- data.frame(aluno = alunos, notas = NA)
 
 df$notas <- avaliacoes
 
-# PorÈm, observe que atribuir uma lista no momento de criaÁ„o do data frame.
+# Por√©m, observe que atribuir uma lista no momento de cria√ß√£o do data frame.
 # Veja:
 
 df <- data.frame(aluno = alunos, 
@@ -31,19 +31,19 @@ df <- data.frame(aluno = alunos,
 
 dfl <- data.frame(x = 1:3, y = I(list(1:2, 1:3, 1:4)))
 
-# Mais informaÁıes
+# Mais informa√ß√µes
 ?I
 
 
-# A funÁ„o lapply() permite que se aplica uma funÁ„o a todos
-# os elementos de uma lista. Veja os exemplos para mÈdia e
+# A fun√ß√£o lapply() permite que se aplica uma fun√ß√£o a todos
+# os elementos de uma lista. Veja os exemplos para m√©dia e
 # soma das notas do nosso daa frame anterior.
 
 lapply(X = df[,2], FUN = mean)
 
 lapply(X = df[,2], FUN = sum)
 
-# TambÈm È possÌvel passar funÁıes alÈm das convencionais como argumento.
+# Tamb√©m √© poss√≠vel passar fun√ß√µes al√©m das convencionais como argumento.
 
 soma_um <- function(x){
   x + 1
@@ -53,7 +53,7 @@ lista <- c(1,2,3,4)
 
 lapply(X = lista, FUN = soma_um)
 
-# O R tambÈm permite que o conte˙do de uma vari·vel em um data frame
+# O R tamb√©m permite que o conte√∫do de uma vari√°vel em um data frame
 # seja uma matriz
 
 dfm <- data.frame(x = 1:3, y = I(matrix(1:9, nrow = 3)))
@@ -61,20 +61,20 @@ dfm <- data.frame(x = 1:3, y = I(matrix(1:9, nrow = 3)))
 # Podemos acessar a matriz y pelo operador $
 dfm$y
 
-# TambÈm podemos especificar a linha da matriz y, tambÈm
+# Tamb√©m podemos especificar a linha da matriz y, tamb√©m
 dfm[2, "y"]
 
 
 # Assim como o comando lapply() funciona com listas, o apply()
-# funciona com matrizes e data frames. A diferenÁa est· no fato
-# de serem estruturas multidimensionais: È preciso especificar se
-# a funÁ„o ser· aplicada por linhas atravÈs do argumento MARGIN
+# funciona com matrizes e data frames. A diferen√ßa est√° no fato
+# de serem estruturas multidimensionais: √© preciso especificar se
+# a fun√ß√£o ser√° aplicada por linhas atrav√©s do argumento MARGIN
 
 
 # No nosso exemplo, vamos gerar as notas aleatoriamente seguindo 
-# uma distribuiÁ„o uniforme. O comando runif faz isso, recebendo
-# como argumento a quantidade de n˙meros a gerar e os valores
-# m·ximo e mÌnimo.
+# uma distribui√ß√£o uniforme. O comando runif faz isso, recebendo
+# como argumento a quantidade de n√∫meros a gerar e os valores
+# m√°ximo e m√≠nimo.
 
 avaliacoes <- matrix(runif(n = 15, min = 6, max = 10), ncol = 3, nrow = 5)
 
@@ -87,13 +87,13 @@ historico <- data.frame(aluno = alunos, notas = I(avaliacoes))
 
 historico$notas
 
-# Qual È soma das notas de cada aluno?
+# Qual √© soma das notas de cada aluno?
 apply(historico$notas, MARGIN = 1, FUN = sum)
 
-# Qual È mÈdia das notas de cada aluno?
+# Qual √© m√©dia das notas de cada aluno?
 apply(historico$notas, MARGIN = 1, FUN = mean)
 
-# Quais s„o os quartis das distribuiÁoes de notas de cada aluno?
+# Quais s√£o os quartis das distribui√ßoes de notas de cada aluno?
 apply(historico$notas, MARGIN = 1, FUN = summary)
 
 
@@ -119,7 +119,7 @@ colnames(historico) <- nomes
 historico <- historico[,-3]
 
 # Isso remove todos os elementos da terceira coluna. Veja com
-# mais detalhes na seÁ„o a seguir
+# mais detalhes na se√ß√£o a seguir
 
 
 
@@ -129,64 +129,64 @@ x <- c(2.1, 4.2, 3.3, 5.4)
 
 # O comando order() serve para ordenar os termos de um vetor
 
-# Por padr„o retornar· as posiÁıes...
+# Por padr√£o retornar√° as posi√ß√µes...
 order(x)
 
-# ... e quando passado como Ìndice, retorna o vetor ordenado
+# ... e quando passado como √≠ndice, retorna o vetor ordenado
 x[order(x)]
 
 
-# … possivel acessar subconjuntos de um vetor passando um vetor
-# para Ìndices dos valores desejados.
+# √â possivel acessar subconjuntos de um vetor passando um vetor
+# para √≠ndices dos valores desejados.
 x[c(1,3)]
 
 
-# OBS1: Õndices repetidos retornam o mesmo valor
+# OBS1: √çndices repetidos retornam o mesmo valor
 x[c(1,1)]
 
 
-# OBS2: Valores reais s„o truncados (a parte real È desconsiderada)
+# OBS2: Valores reais s√£o truncados (a parte real √© desconsiderada)
 x[c(2.5, 3.9)]
 
 
-# TambÈm se pode remover termos de um vetor desse mÈtodo
+# Tamb√©m se pode remover termos de um vetor desse m√©todo
 x[-4] # Sem o quarto elemento
 x[-c(1,2)] # Sem o primeiro e o segundo elementos
 x[c(-3,-4)] # Sem o terceiro e o quarto elementos
 
 
-# OBS3: TambÈm se pode passar valores lÛgicos como Ìndices.
+# OBS3: Tamb√©m se pode passar valores l√≥gicos como √≠ndices.
 
 x[c(TRUE, FALSE, TRUE, FALSE)]
 
-# Caso o vetor lÛgico seja menor que x, ele ser· reciclado (repetido)
+# Caso o vetor l√≥gico seja menor que x, ele ser√° reciclado (repetido)
 x[c(FALSE, TRUE)]
 
 
-# Isso permite a busca de termos atravÈs de expressıes lÛgicas
+# Isso permite a busca de termos atrav√©s de express√µes l√≥gicas
 
 x[x > 3] # Elementos de x maiores que 3
 x[x > 3 & x < 5] # Elementos de x maiores que 3 e menores que 5
 
 
-# OBS4: NA no Ìndice gera NA na posiÁ„o. N√O È o mesmo que FALSE.
+# OBS4: NA no √≠ndice gera NA na posi√ß√£o. N√ÉO √© o mesmo que FALSE.
 x[c(TRUE, FALSE, NA, TRUE)]
 
 
-# TambÈm podemos chamar elementos por seus nomes
+# Tamb√©m podemos chamar elementos por seus nomes
 y <- setNames(x, letters[1:4])
 y[c("a", "c", "b")]
 
-# Chamar um nome que n„o corresponde a elemento algum retorna NA
+# Chamar um nome que n√£o corresponde a elemento algum retorna NA
 z <- c(abc = 1, def = 2)
 z
 z[c("a", "b")]
 
 
-# Essa sintaxe tambÈm funciona para arrays e data frames.
+# Essa sintaxe tamb√©m funciona para arrays e data frames.
 # Veja o exemplo abaixo com uma matriz
 
-a <- matrix(1:9, nrow = 3) # matriz 3x3 com os n˙meros de 1 a 9
+a <- matrix(1:9, nrow = 3) # matriz 3x3 com os n√∫meros de 1 a 9
 
 colnames(a) <- c("A", "B", "C") # Nomeando as colunas
 a[1:2,] # Linhas 1 e 2, todos as colunas
@@ -197,9 +197,9 @@ a[0, -2] # Nomes das colunas, excluindo a segunda
 
 # Comando outer()------------------------------------------------------
 
-# O comando outer() aplica uma determinada operaÁ„o em todas as funÁıes
-# possÌveis dos elementos dos argumentos X e Y, gerando uma array
-# que contÈm os resultados.
+# O comando outer() aplica uma determinada opera√ß√£o em todas as fun√ß√µes
+# poss√≠veis dos elementos dos argumentos X e Y, gerando uma array
+# que cont√©m os resultados.
 
 x <- 1:3
 y <- 4:6
@@ -210,17 +210,17 @@ dif_xy <- outer(X = x, Y = y, FUN = "-")
 ?outer
 
 
-# O cÛdigo abaixo est· aplicando o comando paste() para todos
-# os n˙meros de 1 a 5
+# O c√≥digo abaixo est√° aplicando o comando paste() para todos
+# os n√∫meros de 1 a 5
 vals <- outer(1:5, 1:5, FUN = "paste", sep = ",")
 
 
-# Ainda È possÌvel buscar elementos com um vetor como Ìndice.
-# Note que os elementos s„o contados por coluna.
+# Ainda √© poss√≠vel buscar elementos com um vetor como √≠ndice.
+# Note que os elementos s√£o contados por coluna.
 vals[c(4, 15)]
 
 
-# TambÈm È possÌvel acessar os elementos de um array usando uma
+# Tamb√©m √© poss√≠vel acessar os elementos de um array usando uma
 # matriz com os pares ordenados dos elementos desejados
  
 select <- matrix(ncol = 2, byrow = TRUE, c(1,1,3,1,2,4))
