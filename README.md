@@ -24,4 +24,4 @@ Aula 07 (08/07/2019): Data frames (continuação), comandos lapply() e apply(), 
                       de um data frame, acessar subconjuntos de vetores e arrays, comando outer()
                       
 Aula 08 (10/07/2019): Acessar subconjuntos de um data frame, modificar o mesmo data frame ou
-                      criar um novo data frame a partit desse subconjunto
+                      criar um novo data frame a partir desse subconjunto
