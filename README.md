@@ -27,3 +27,5 @@ Aula 08 (10/07/2019): Filtrar os dados de um data frame, modificar o mesmo data 
                       criar um novo data frame a partir desse subconjunto
 
 Aula 09 (15/07/2019): Filtro de dados em um data frame (continuação), simplificação e preservação de estruturas de dados
+
+Aula 10 (18/07/2019): Operadpres infixos, Interação com o usuário, Estruturas condicionais: if() else, switch(), ifelse()
