@@ -30,3 +30,6 @@ Aula 09 (15/07/2019): Filtro de dados em um data frame (continuação), simplifi
                       Correspondência entre vetores: comando match()
 
 Aula 10 (18/07/2019): Operadores infixos, Interação com o usuário, Estruturas condicionais: if() else, switch(), ifelse()
+
+Aula 11 (22/07/2019): Comando readline(), Estruturas de repetição: comandos while(), repeat(), for() e instruções
+                      break e next, Benchmarking
