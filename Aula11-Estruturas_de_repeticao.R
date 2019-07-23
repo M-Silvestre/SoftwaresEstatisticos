@@ -1,7 +1,7 @@
 # Introdução a softwares estatísticos
 # Data: 22/07/2019
 # Aula: 11
-# Assunto: 
+# Assunto: Estruturas de repetição (loops)
 
 # Estrutura condicionais (continuação) ------------------
 
