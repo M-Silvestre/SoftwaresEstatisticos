@@ -1,31 +1,33 @@
-# Introdução a softwares estatísticos
+# IntroduÃ§Ã£o a softwares estatÃ­sticos
 # Data: 22/07/2019
 # Aula: 11
 # Assunto: 
 
-# Estrutura condicionais (continuação) ------------------
+# Estrutura condicionais (continuaÃ§Ã£o) ------------------
 
-# Outra forma de implementar o exercício da aula passada: 
+# Outra forma de implementar o exercÃ­cio da aula passada: 
 
 meu_salario <- function(){
-  salario <- as.numeric(readline(prompt = "Entre com um salário: "))
+  salario <- as.numeric(readline(prompt = "Entre com um salÃ¡rio: "))
   sexo <- tolower(readline(prompt = "Informe o sexo (m ou f): "))
   switch(sexo,
          "m" = {
            imposto = 0.15;
-           cat("O salário a ser pago é ", salario - salario*imposto)
+           cat("O salÃ¡rio a ser pago Ã© ", salario - salario*imposto)
               },
          "f" = {
            imposto = 0.1;
-            cat("O salário a ser pago é ", salario - salario*imposto)
+            cat("O salÃ¡rio a ser pago Ã© ", salario - salario*imposto)
               }
          )
 }
+meusalario
 
-# Exercício: descreva o que as funções tolower(), toupper() e readline().
+
+# ExercÃ­cio: descreva o que as funÃ§Ãµes tolower(), toupper() e readline().
 # Apresente exemplos do uso delas.
 
-# Estruturas de repetição (loops) --------------------------------------
+# Estruturas de repetiÃ§Ã£o (loops) --------------------------------------
 
 
 # Comando while():
@@ -36,7 +38,7 @@ while(i < 7){
   i <- i + 1
 }
 
-# Exercício: Escreva um programa que exiba a tabuada de 7 
+# ExercÃ­cio: Escreva um programa que exiba a tabuada de 7 
 
 i <- 1
 while(i <= 10){
@@ -45,10 +47,11 @@ while(i <= 10){
 }
 
 
-# OBS: Cuidado com loops infinitos. Uma instrução de repetição sem
+# OBS: Cuidado com loops infinitos! Uma instruÃ§Ã£o de repetiÃ§Ã£o precisa de
+# uma condiÃ§Ã£o de tÃ©rmino que expressa atÃ© quando ela deverÃ¡ ser executada. 
 
-# Exemplo: O código abaixo exibe o conteúdo de u enquanto
-# a expressão u < 0.5 for verdadeira. Isso gera um loop infinito?
+# Exemplo: O cÃ³digo abaixo exibe o conteÃºdo de u enquanto
+# a expressÃ£o u < 0.5 for verdadeira. Isso gera um loop infinito? Por quÃª?
 
 u <- runif(n = 1, min = 0, max = 1)
 while(u < 0.5){
@@ -57,8 +60,8 @@ while(u < 0.5){
 }
 
 
-# Comando repeat(): Repete uma instrução indefinidamente até
-# uma condição interna force sua interrupção
+# Comando repeat(): Repete uma instruÃ§Ã£o indefinidamente atÃ©
+# uma condiÃ§Ã£o interna force sua interrupÃ§Ã£o
 
 # Exemplo:
 
@@ -71,31 +74,33 @@ repeat{
     texto <- c(texto,fr)
 }
 
-# O código acima recebe cadeias de caracteres (strings) e as armazena
-# em um vetor de caracteres até que uma string vazia seja informada.
+# O cÃ³digo acima recebe cadeias de caracteres (strings) e as armazena
+# em um vetor de caracteres atÃ© que uma string vazia seja informada,
+# o que encerra o loop.
 
 
-# O comando break serve para finalizar estruturas de repetição.
-# No exemplo anterior, quando a condição do if() for verdadeira
-# a instrução break será executada e o repeat() será terminado.
+# A instruÃ§Ã£o break serve para finalizar estruturas de repetiÃ§Ã£o.
+# No exemplo anterior, quando a condiÃ§Ã£o do if() for verdadeira
+# a instruÃ§Ã£o break serÃ¡ executada e o repeat() serÃ¡ terminado.
 
-# A instrução break pode ser usada em loops while() e repeat()
+# A instruÃ§Ã£o break pode ser usada em loops while() e repeat()
 # assim como em for(), como veremos mais a frente.
 
 
-# Outra instrução útil em estruturas de repetição é o next.
-# Quando ela é executada, todas as instruções que seguem
-# são ignoradas e o loop passa para a próxima iteração.
+# Outra instruÃ§Ã£o Ãºtil em estruturas de repetiÃ§Ã£o Ã© o next.
+# Quando ela Ã© executada, todas as instruÃ§Ãµes que seguem
+# sÃ£o ignoradas e o loop passa para a prÃ³xima iteraÃ§Ã£o.
 
 # Exemplo:
 
 # Geramos um vetor vazio:
 vetor <- c()
 
-# Recebemos números inteiros e os armazenamos os estritamente positivos
-# em um vetor até zero ser informado, ignorando valores negativos.
+# Recebemos nÃºmeros inteiros e os armazenamos os estritamente positivos
+# em um vetor atÃ© zero ser informado, ignorando valores negativos.
+
 repeat{
-  nro <- as.numeric(readline(prompt = "Introduza um número positivo (zero termina): "))
+  nro <- as.numeric(readline(prompt = "Introduza um nÃºmero positivo (zero termina): "))
   if(nro < 0) 
     next
   else if(nro == 0)
@@ -105,10 +110,10 @@ repeat{
 }
 
 
-# Comando for(): Semelhante ao comando for() em C, é uma 
-# estrutura de repetição com uma variável de controle,
+# Comando for(): Semelhante ao comando for() em C, Ã© uma 
+# estrutura de repetiÃ§Ã£o com uma variÃ¡vel de controle,
 
-# Exercício: Usando a instrução de repetição for(), construa
+# ExercÃ­cio: Usando a instruÃ§Ã£o de repetiÃ§Ã£o for(), construa
 # um programa que com um vetor de valores entre 0 e 1 some apenas
 # os maiores que 0.7
 
@@ -123,8 +128,8 @@ for(i in vetor){
     soma <- soma + i
 }
 
-# OBS: veja que i não precisa ser inteiro em uma sequência. Podemos
-# iterar usando os elementos de um vetor.
+# OBS: veja que i nÃ£o precisa ser um inteiro em uma sequÃªncia 1,2,3,...,n.
+# Podemos iterar usando os elementos de um vetor.
 
 
 # Sem o loop:
@@ -132,12 +137,13 @@ for(i in vetor){
 sum(vetor[vetor > 0.7])
 
 
-# Exercício: consulte a documentação da função Sys.time(). Use-a
-# para obter o tempo de execução das funções implementedas
-# nos exercícios anteriores, mas para um vetor de 10.000.000 números
-# pseudoaleatórios.
+# ExercÃ­cio: consulte a documentaÃ§Ã£o da funÃ§Ã£o Sys.time(). Use-a
+# para obter o tempo de execuÃ§Ã£o das funÃ§Ãµes implementedas
+# nos exercÃ­cios anteriores, mas para um vetor de 10.000.000 nÃºmeros
+# pseudoaleatÃ³rios.
 
-set.seed(0)
+set.seed(0) # Fixamos a semente dos nÃºmeros pseudoaleatÃ³rios para que
+            # os resultados sejam reproduzÃ­veis.
 
 vetor <- runif(n = 1e7, min = 0, max = 1)
 
@@ -160,28 +166,28 @@ Sys.time() - tempo_0
 # Benchmarking --------------------------------------------------------
 
 
-# Benchmarking é o processo de executar um programa ou conjunto
-# de operações a fim de avaliar o desempenho relativo de uma função
-# ou objeto. O desempenho é testado por meio de um conjunto de testes
-# padrões e ensaios sobre a função ou objeto.
+# Benchmarking Ã© o processo de executar um programa ou conjunto
+# de operaÃ§Ãµes a fim de avaliar o desempenho relativo de uma funÃ§Ã£o
+# ou objeto. O desempenho Ã© testado por meio de um conjunto de testes
+# padrÃµes e ensaios sobre a funÃ§Ã£o ou objeto.
 
 
-# Isso é útil pois na estatística estamos interessados em simulações
-# de dados e repetições de processos, onde é interessante saber o
-# o tempo de execução ou custo computacional de trechos de código
-# a fim de se detectar "gargalos" e otimizar nossas funções.
+# Isso Ã© Ãºtil pois na estatÃ­stica estamos interessados em simulaÃ§Ãµes
+# de dados e repetiÃ§Ãµes de processos, onde Ã© interessante saber o
+# o tempo de execuÃ§Ã£o ou custo computacional de trechos de cÃ³digo
+# a fim de se detectar "gargalos" e otimizar nossas funÃ§Ãµes.
 
 
 # Uma das formas eficientes de se fazer benchmarks na linguagem R
-# pe usando a função microbenchmark() do pacote de mesmo nome.
+# pe usando a funÃ§Ã£o microbenchmark() do pacote de mesmo nome.
 
 install.packages("microbenchmark")
 
 library(microbenchmark)
 
 
-# Vamos usar este comando para investigar o tempo gasto no nosso código
-# anterior, com e sem loops, para um vetor de 1000 números.
+# Vamos usar este comando para investigar o tempo gasto no nosso cÃ³digo
+# anterior, com e sem loops, para um vetor de 1000 nÃºmeros.
 
 set.seed(0)
 
@@ -201,16 +207,19 @@ microbenchmark(
 microbenchmark(sum(vetor[vetor > 0.7]))
 
 
-# O microbenchmark é útil para investigar a eficiência de maneiras
-# de implementar trechos curtos de códigos. Por padrão, o comando
+# O microbenchmark Ã© Ãºtil para investigar a eficiÃªncia de maneiras
+# de implementar trechos curtos de cÃ³digos. Por padrÃ£o, o comando
 # repete o trecho fornecido 100 vezes.
+# Esse comando nÃ£o deve ser usado para investigar o custo 
+# computacional de blocos extensos de cÃ³digo.
 
 
-# Conclusão: loops são estruturas computacionalmete intensivas em R.
-# Deve-se evitar usá-los desnecessariamente.
+# ConclusÃ£o: loops sÃ£o estruturas computacionalmete intensivas em R.
+# Eles devem ser usados apenas quando necessÃ¡rio, pois Ã s vezes hÃ¡
+# soluÃ§Ãµes mais eficientes para se resolver uma tarefa.
 
 
-# Exercício: Reescreva o trecho abaixo usando a instrução while()
+# ExercÃ­cio: Reescreva o trecho abaixo usando a instruÃ§Ã£o while()
 
 for(i in 1:20){
   if(i == 10)
@@ -235,15 +244,15 @@ while(i <= 20){
 }
 
 
-# Lembra desse exercício em C?
+# Lembra desse exercÃ­cio em C?
 # n = 1         n = 2        n = 3      ...
 #  *             *             *
 #                **            **
 #                              ***
 
-# Tente reproduzi-lo em R com loops
+# Tente reproduzi-lo em R usando loops (while, repeat, for).
 
-n <- as.integer(readline(prompt = "Informe um número natural: "))
+n <- as.integer(readline(prompt = "Informe um nÃºmero natural: "))
 
 for(linha in 1:n){
   for(coluna in 1:linha){
