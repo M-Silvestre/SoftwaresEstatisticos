@@ -32,4 +32,7 @@ Aula 09 (15/07/2019): Filtro de dados em um data frame (continuação), simplifi
 Aula 10 (18/07/2019): Operadores infixos, Interação com o usuário, Estruturas condicionais: if() else, switch(), ifelse()
 
 Aula 11 (22/07/2019): Comando readline(), Estruturas de repetição: comandos while(), repeat(), for() e instruções
-                      break e next, Benchmarking
+                      break e next, Benchmarking e custo computacional de loops
+                      
+Aula 12 (24/07/2019): Estruturas de repetição e custo computacional de loops (continuação), loops vs comandos funcionais:
+                      lapply(), apply(), tapply(), sapply()
