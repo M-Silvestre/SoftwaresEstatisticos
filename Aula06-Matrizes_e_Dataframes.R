@@ -3,7 +3,7 @@
 # Aula: 06
 # Assunto: Matrizes e dataframes
 
-rm(list(ls(all = TRUE)))
+rm(list(ls(all = TRUE))) # Remove todos os objetos da memória
 
 # Matrizes (continuação) --------------------------------------------------
 
