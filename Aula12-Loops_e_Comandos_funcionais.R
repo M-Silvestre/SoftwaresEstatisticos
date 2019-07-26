@@ -1,13 +1,13 @@
-# Introdução a softwares estatísticos
+# IntroduÃ§Ã£o a softwares estatÃ­sticos
 # Data: 24/07/2019
 # Aula: 12
-# Assunto: Estruturas de repetição e comandos funcionais
+# Assunto: Estruturas de repetiÃ§Ã£o e comandos funcionais
 
 
-# Estruturas de repetição (continuação) -----------------------------------
+# Estruturas de repetiÃ§Ã£o (continuaÃ§Ã£o) -----------------------------------
 
-# Exercício: baseado no exercício anterior, escreva um código que 
-# receba um inteiro e tenha a segunte saída:
+# ExercÃ­cio: baseado no exercÃ­cio anterior, escreva um cÃ³digo que 
+# receba um inteiro e tenha a segunte saÃ­da:
 # n = 1         n = 2        n = 3      ...
 #  A             A             A
 #                BB            BB
@@ -22,20 +22,20 @@ for(linha in 1:n){
   cat("\n")
 }
 
-# R possui listas de letras em ordem alfabética, letters para minúsculas
-# e LETTERS para maiúsculas.
+# R possui listas de letras em ordem alfabÃ©tica, letters para minÃºsculas
+# e LETTERS para maiÃºsculas.
 
 
-# Exercício: Um professor que realizar um construir uma função em R
+# ExercÃ­cio: Um professor que realizar um construir uma funÃ§Ã£o em R
 # que recebe as notas de uma aluno e informe se ele foi aprovado,
-# reprovado ou irá para prova final. Neste último caso, também deve
-# ser informada a nota necessária para ele ser aprovado.
+# reprovado ou irÃ¡ para prova final. Neste Ãºltimo caso, tambÃ©m deve
+# ser informada a nota necessÃ¡ria para ele ser aprovado.
 
 
 
-aluno <- function(){
+aluno <- function(){      # Criando uma funÃ§Ã£o sem argumentos
   
-  n_avaliacoes <- as.numeric(readline(prompt = "Quantas avaliações? "))
+  n_avaliacoes <- as.numeric(readline(prompt = "Quantas avaliaÃ§Ãµes? "))
   
   i <- 1
   
@@ -63,21 +63,21 @@ aluno <- function(){
 
 }
 
-aluno()
+aluno() # Chamando a funÃ§Ã£o que definimos
 
 
-# OBS: Diferentemente de programar em C, na computação estatísticas em R não
-# estamos interessados em interação com o usários e sim em funções que recebem
+# OBS: Diferentemente de programar em C, na computaÃ§Ã£o estatÃ­sticas em R nÃ£o
+# estamos interessados na interaÃ§Ã£o com o usÃ¡rios e sim em funÃ§Ãµes que recebem
 # argumentos e retornam objetos.
 
 
 
-# Exercício: crie uma matriz 5 x 2 e some todos os elementos 
+# ExercÃ­cio: crie uma matriz 5 x 2 e some todos os elementos 
 # de uma matriz. 
-# Dica: gere aleatoriamente os números da matriz.
+# Dica: gere aleatoriamente os nÃºmeros da matriz.
 
-set.seed(0) # Fixar a semente dos números aleatórios faz com que os
-            # resultados sejam replicáveis.
+set.seed(0) # Fixar a semente dos nÃºmeros aleatÃ³rios faz com que os
+            # resultados sejam replicÃ¡veis.
 
 matriz <- matrix(runif(10), 5, 2)
 
@@ -85,40 +85,40 @@ soma <- 0 # Instanciar o valor antes de somar
 
 for(coluna in 1:ncol(matriz)) # Percorrer as colunas da matriz
   for(linha in 1:nrow(matriz)) # Dentro de cada coluna, percorrer as linhas
-    somaz <- soma + matriz[linha, coluna] # Adicionar cada elemento à soma
+    somaz <- soma + matriz[linha, coluna] # Adicionar cada elemento Ã  soma
 
 soma
   
 
-# OBS: O exercício acima tem o objetivo de exercitar os conhecimentos em
-# programação. Uma solução mais simples para o problema seria:
+# OBS: O exercÃ­cio acima tem o objetivo de exercitar os conhecimentos em
+# programaÃ§Ã£o. Uma soluÃ§Ã£o mais simples para o problema seria:
 
 sum(matriz)
 
 
-# Vamos tentar o mesmo para uma matriz 1000 x 1000, com um milhão de números.
+# Vamos tentar o mesmo para uma matriz 1000 x 1000, com um milhÃ£o de nÃºmeros.
 # Usando loops:
 
 set.seed(0)
 
 matriz <- matrix(runif(1e06), 1000, 1000)
 
-tempo_inicial <- Sys.time() # Tempo inicial do relógio
+tempo_inicial <- Sys.time() # Tempo inicial do relÃ³gio
 soma <- 0
 for(coluna in 1:ncol(matriz))
   for(linha in 1:nrow(matriz))
     soma <- soma + matriz[linha, coluna]
-Sys.time() - tempo_inicial # Diferença entre tempo inicial e final
+Sys.time() - tempo_inicial # DiferenÃ§a entre tempo inicial e final
 
 
 # Usando o sum():
 
 tempo_inicial <- Sys.time() # Tempo antes de somarmos
 sum(matriz)
-Sys.time() - tempo_inicial # Diferença entre tempo inicial e final
+Sys.time() - tempo_inicial # DiferenÃ§a entre tempo inicial e final
 
 
-# Execícios: usando loops, retorne um vetor com as somas das colunas
+# ExecÃ­cios: usando loops, retorne um vetor com as somas das colunas
 # de uma matriz 10 x 10 gerada aleatoriamente.
 
 
@@ -138,11 +138,11 @@ for(coluna in 1:ncol(matriz)){
   
 vetor_soma
   
-# Alternativamente, podemos usar a função apply()
+# Alternativamente, podemos usar a funÃ§Ã£o apply()
 
 apply(matriz, MARGIN = 2, FUN = sum)
 
-# Por receber uma função como argumento, o comando apply() é o que
+# Por receber uma funÃ§Ã£o como argumento, o comando apply() Ã© o que
 # chamamos de funcional.
 
 
@@ -150,45 +150,46 @@ apply(matriz, MARGIN = 2, FUN = sum)
 
 
 # Vamos agora aprender sobre outro comando funcional, o tapply().
-# O banco warpbreaks vem com o R base, e tem dados sobre um teste de
-# resistência de fios de lã à força de tensão, uma espécie de 
+# O banco warpbreaks vem com o R base, e tem dados sobre testes de
+# resistÃªncia de fios de lÃ£ a forÃ§a de tensÃ£o, uma espÃ©cie de 
 # controle de qualidade.
 
 data(warpbreaks)
 
-head(warpbreaks) # A instrução head() nos dá mais detalhes sobre o banco
-                 # exibindo as primeiras linhas
+head(warpbreaks) # A instruÃ§Ã£o head() nos dÃ¡ mais detalhes sobre o banco
+                 # exibindo o nome das variÃ¡veis e o conteÃºdo das 
+                 # primeiras linhas.
 
 
-# O comando tapply() permite aplicar uma função a uma variável
-# de um data frame e cruzar os resultados em duas variáveis categóricas.
+# O comando tapply() permite aplicar uma funÃ§Ã£o a uma variÃ¡vel
+# de um data frame e cruzar os resultados entre variÃ¡veis categÃ³ricas.
 
 
-# No código abaixo, estamos somando o total de rompimentos cruzando as
-# combinações entre tipo de lã (wool): A ou B, e tensão aplicada no teste
-# (tension): baixa (L, "low"), média (M, "medium") ou alta (H, "high").
+# No cÃ³digo abaixo, estamos somando o total de rompimentos cruzando as
+# combinaÃ§Ãµes entre tipo de lÃ£ (wool): A ou B, e tensÃ£o aplicada no teste
+# (tension): baixa (L, "low"), mÃ©dia (M, "medium") ou alta (H, "high").
 
 tapply(X = warpbreaks$breaks, INDEX = warpbreaks[,-1], FUN = sum)
 
 # OBS: O filtro aplicado em warpbreaks como INDEX significa "todas as linhas
-# de todas as colunas exceto a primeira", pois esta tem os dados numéricos
-# enquanto as outras duas possuem os dados catégóricos.
+# de todas as colunas exceto a primeira", pois esta tem os dados numÃ©ricos
+# enquanto as outras duas possuem as variÃ¡veis catÃ©gÃ³ricas.
 
 
-# Mais informações sobre os comandos da "família" apply podem ser encontrados
-# na documentação
+# Mais informaÃ§Ãµes sobre os comandos da "famÃ­lia" apply podem ser encontrados
+# na documentaÃ§Ã£o
 
 ?lapply
 ?apply
 ?tapply
 
 
-# Comandos funcionais são basttante úteis para se varrer um data frame
-# com uma função sem o uso de loops.
+# Comandos funcionais sÃ£o basttante Ãºteis para se varrer um data frame
+# com uma funÃ§Ã£o sem o uso de loops.
 
 
-# OBS: Por padrão, strings informadas em data.frame são coercidas para fatores.
-# Isso é controlado pelo argumento StringAsFactors, que por padrão é TRUE.
+# OBS: Por padrÃ£o, strings informadas em data.frame sÃ£o coercidas para fatores.
+# Isso Ã© controlado pelo argumento StringAsFactors, que por padrÃ£o Ã© TRUE.
 # Veja o exemplo:
 
 x <- data.frame(a = 1:10, b = letters[1:10])
@@ -196,14 +197,14 @@ str(x$b)
 
 levels(x$b)
 
-# Isso é útil para se quer usar os valores assumidos pela variável de caractere
+# Isso Ã© Ãºtil para se quer usar os valores assumidos pela variÃ¡vel de caractere
 # como categorias para agrupar outras, como no exemplo do banco warpbreaks.
 
 
 # Outro exemplo de tapply:
 
-# z é um data frame com informações sobre altura (em metros), sexo e
-# turma de um grupo hipotético de 8 estudantes.
+# z Ã© um data frame com informaÃ§Ãµes sobre altura (em metros), sexo e
+# turma de um grupo hipotÃ©tico de 8 estudantes.
 
 z <- data.frame(altura = c(1.8, 1.6, 1.77, 1.68, 1.72, 1.65, 1.73, 1.59),
                 sexo = c("M", "F", "M", "F", "F", "M", "M", "F"),
@@ -211,7 +212,7 @@ z <- data.frame(altura = c(1.8, 1.6, 1.77, 1.68, 1.72, 1.65, 1.73, 1.59),
 z
 
 # O comando tapply() permite que possamos separar esses estudantes
-# em grupos  menores de acordo com turma e sexo, e calcular as médias
+# em grupos  menores de acordo com turma e sexo, e calcular as mÃ©dias
 # de altura de cada subgrupo.
 
 tapply(X = z$altura, INDEX = z[,2:3], FUN = mean)
@@ -219,28 +220,28 @@ tapply(X = z$altura, INDEX = z[,2:3], FUN = mean)
 
 # Comando sapply()----------------------------------------------------------
 
-# Outro comando: funcional, o sapply() serve para alicar uma mesma função em todos
+# Outro comando: funcional, o sapply() serve para alicar uma mesma funÃ§Ã£o em todos
 # os elementos de uma lista ou vetor, retornando um vetor com os resultados.
 
-# A lista abaixo contém um vetor com os inteiros de 1 a 15 em ordem aleatória,
-# outro com 4 números reais e finalmente um com 100 números pseudoaleatórios
-# gerados de acordo com uma distribuição uniforme entre 0 e 1.
+# A lista abaixo contÃ©m um vetor com os inteiros de 1 a 15 em ordem aleatÃ³ria,
+# outro com 4 nÃºmeros reais e finalmente um com 100 nÃºmeros pseudoaleatÃ³rios
+# gerados de acordo com uma distribuiÃ§Ã£o uniforme entre 0 e 1.
 
 lista <- list(t1 = sample(15), t2 = c(7.7, 3.4, 4.7, 8.02), t3 = runif(100))
 
-# O código abaixo aplica a função quantile() aos vetores de lista, retornando
-# os quartis da distribução de elementos de cada um.
+# O cÃ³digo abaixo aplica a funÃ§Ã£o quantile() aos vetores de lista, retornando
+# os quartis da distribuÃ§Ã£o de elementos de cada um.
 
 sapply(lista, quantile)
 
-# OBS: A função informada deve ser apropriada para as estruturas na lista.
+# OBS: A funÃ§Ã£o informada deve ser apropriada para as estruturas na lista.
 
 
 
-# Outro exemplo: Temos uma função que gera 10 números pseudoaleatórios e os
-# soma, e queremos executá-la 10 vezes, guardando os resultados em um vetor.
+# Outro exemplo: Temos uma funÃ§Ã£o que gera 10 nÃºmeros pseudoaleatÃ³rios e os
+# soma, e queremos executÃ¡-la 10 vezes, guardando os resultados em um vetor.
 
-# Função:
+# FunÃ§Ã£o:
 
 f <- function(i) sum(runif(10))
 
@@ -264,5 +265,5 @@ sapply(1:10, FUN = f)
 
 
 # O pacote purrr fornece mais comandos funcionais, que permitem realizar
-# operações mais complicadas com comandos mais curtos e maior
-# desempenho computacional, a custo maior de raciocínio.
+# operaÃ§Ãµes mais complicadas com comandos mais curtos e maior
+# desempenho computacional, a custo maior de raciocÃ­nio.
