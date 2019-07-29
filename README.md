@@ -36,3 +36,5 @@ Aula 11 (22/07/2019): Comando readline(), Estruturas de repetição: comandos wh
                       
 Aula 12 (24/07/2019): Estruturas de repetição e custo computacional de loops (continuação), loops vs comandos funcionais:
                       lapply(), apply(), tapply(), sapply()
+                      
+Aula 13 (29/07/2019): Comando funcional mapply(), Simulações de Monte Carlo
