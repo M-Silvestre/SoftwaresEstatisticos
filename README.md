@@ -38,3 +38,5 @@ Aula 12 (24/07/2019): Estruturas de repetição e custo computacional de loops (
                       lapply(), apply(), tapply(), sapply()
                       
 Aula 13 (29/07/2019): Comando funcional mapply(), Simulações de Monte Carlo
+
+Aula 14 (31/07/2019): Testando estimadores com simulações de Monte Carlo, funções
