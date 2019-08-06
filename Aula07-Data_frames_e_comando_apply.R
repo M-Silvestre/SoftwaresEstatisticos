@@ -197,9 +197,9 @@ a[0, -2] # Nomes das colunas, excluindo a segunda
 
 # Comando outer()------------------------------------------------------
 
-# O comando outer() aplica uma determinada operação em todas as funções
-# possíveis dos elementos dos argumentos X e Y, gerando uma array
-# que contém os resultados.
+# O comando outer() aplica uma determinada operação em todas as combinações
+# possíveis dos elementos dos argumentos X e Y, gerando um array que contém
+# os resultados.
 
 x <- 1:3
 y <- 4:6
