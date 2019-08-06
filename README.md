@@ -12,11 +12,11 @@ Aula 04 (12/06/2019): Interações entre listas e vetores, fatores, concatenando
 
 Aula 05 (17/06/2019): Concatenando strings com paste(), matrizes & arrays
 
-Aula cancelada (24/06/2019): Feriado de São João
+Sem aula (24/06/2019): Feriado de São João
 
 Aula 06 (26/06/2019): Matrizes e data frames
 
-Aula cancelada (01/07/2019)
+Sem aula (01/07/2019)
 
 Primeira Avaliação (03/07/2019)
 
@@ -40,3 +40,5 @@ Aula 12 (24/07/2019): Estruturas de repetição e custo computacional de loops (
 Aula 13 (29/07/2019): Comando funcional mapply(), Simulações de Monte Carlo
 
 Aula 14 (31/07/2019): Testando estimadores com simulações de Monte Carlo, funções
+
+Sem aula (05/08/2019): Aniversário de João Pessoa
