@@ -161,13 +161,14 @@ head(warpbreaks) # A instrução head() nos dá mais detalhes sobre o banco
                  # primeiras linhas.
 
 
-# O comando tapply() permite aplicar uma função a uma variável
-# de um data frame e cruzar os resultados entre variáveis categóricas.
+# O comando tapply() permite aplicar uma função a uma variável de um
+# data frame e cruzar os resultados entre os valores assumidos por uma
+# ou mais variáveis categóricas.
 
 
 # No código abaixo, estamos somando o total de rompimentos cruzando as
 # combinações entre tipo de lã (wool): A ou B, e tensão aplicada no teste
-# (tension): baixa (L, "low"), média (M, "medium") ou alta (H, "high").
+# (tension): baixa (L de "low"), média (M de "medium") ou alta (H de "high").
 
 tapply(X = warpbreaks$breaks, INDEX = warpbreaks[,-1], FUN = sum)
 
@@ -184,7 +185,7 @@ tapply(X = warpbreaks$breaks, INDEX = warpbreaks[,-1], FUN = sum)
 ?tapply
 
 
-# Comandos funcionais são basttante úteis para se varrer um data frame
+# Comandos funcionais são bastante úteis para se varrer um data frame
 # com uma função sem o uso de loops.
 
 
