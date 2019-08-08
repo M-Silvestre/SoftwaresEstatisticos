@@ -42,3 +42,5 @@ Aula 13 (29/07/2019): Comando funcional mapply(), Simulações de Monte Carlo
 Aula 14 (31/07/2019): Testando estimadores com simulações de Monte Carlo, funções
 
 Sem aula (05/08/2019): Aniversário de João Pessoa
+
+Aula 15 (07/08/2019): Funções (continuação), cálculo de integrais por simulação de Monte Carlo
