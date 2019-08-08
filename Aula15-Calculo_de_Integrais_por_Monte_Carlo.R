@@ -1,36 +1,36 @@
-# Introdução a softwares estatísticos
+# IntroduÃ§Ã£o a softwares estatÃ­sticos
 # Data: 07/08/2019
 # Aula: 15
-# Assunto: Funções e Cálculo de Integrais por Monte Carlo
+# Assunto: FunÃ§Ãµes e CÃ¡lculo de Integrais por Monte Carlo
 
 
-# Funções (continuação) ---------------------------------------
+# FunÃ§Ãµes (continuaÃ§Ã£o) ---------------------------------------
 
-# Observe que no programa da aula anterior, se a condição avaliada
-# no if() for verdadeira, a função retorna NULL e nada mais será executado.
+# Observe que no programa da aula anterior, se a condiÃ§Ã£o avaliada
+# no if() for verdadeira, a funÃ§Ã£o retorna NULL e nada mais serÃ¡ executado.
 
 
-# Seguem aqui algumas funções matemáticas e estatísticas.
+# Seguem aqui algumas funÃ§Ãµes matemÃ¡ticas e estatÃ­sticas.
 # Sejam x e y vetores de dados.
 
 # sum(x): soma de todos os elementos de x
 # max(x): o maior dos elementos de x
 # min(x): o menor dos elementos de x
-# which.max(x): posição do maior elemento de x
-# range(x): extremos de x (máximo e mínimo)
+# which.max(x): posiÃ§Ã£o do maior elemento de x
+# range(x): extremos de x (mÃ¡ximo e mÃ­nimo)
 
-# mean(x): média dos elementos de x
+# mean(x): mÃ©dia dos elementos de x
 # median(x): mediana
-# scale(x): normaliza x (subtrai a média e divide pelo desvio padrão)
-# sort(x): ordena os termos de x (po padrão, em ordem crescente)
+# scale(x): normaliza x (subtrai a mÃ©dia e divide pelo desvio padrÃ£o)
+# sort(x): ordena os termos de x (po padrÃ£o, em ordem crescente)
 # rank(x): cria um ranking com os elementos de x
 
-# log(x, base): Logaritmo dos núme
+# log(x, base): Logaritmo dos nÃºme
 # exp(x): exponencial dos elementos de x
 # sqrt(x): raiz quadrada de x
 # abs(x): valor absoluto de x
 # round(x, n): valores de x aproximados com n casas decimais
-# OBS: não confundir arredondamento com truncamento.
+# OBS: nÃ£o confundir arredondamento com truncamento.
 # Arredondar:
 round(c(2.3, 1.9, 3.5))
 # Truncar: descartar as casas decimais
@@ -43,13 +43,13 @@ trunc(c(2.3, 1.9, 3.5))
 # intersect(x): retorna os elementos que pertencem a x e y
 
 
-# setdiff(x,y): elementos de x que não pertencem a y
+# setdiff(x,y): elementos de x que nÃ£o pertencem a y
 # is.element(x,y): se os elementos de pertencem a y.
 # semelhante ao operador %%in%%
 
 
 
-# Algumas funções para álgebra de matrizes.
+# Algumas funÃ§Ãµes para Ã¡lgebra de matrizes.
 # Sejam A e B matrizes e b um vetor:
 
 # diag(b, nrow, ncol): retorna uma matriz diagonal com
@@ -63,14 +63,14 @@ trunc(c(2.3, 1.9, 3.5))
 
 # solve(A): retorna a matriz inversa de A
 
-# solve(A,b): resolve o sistema de equações lineares Ax = b
+# solve(A,b): resolve o sistema de equaÃ§Ãµes lineares Ax = b
 
 # eigen(A): calcula os autovalores e autovetores de A, se A for uma
 #           matriz quadrada
 
 
 
-# Exercício 1: apresente exemplos das funções apresentadas acima
+# ExercÃ­cio 1: apresente exemplos das funÃ§Ãµes apresentadas acima
 
 # Alguns exemplos:
 
@@ -85,63 +85,63 @@ b <- c(1,3)
 diag(b, nrow = 4)
 
 
-# Exercício 2: Refaça o exercício de estimadores usando funções
+# ExercÃ­cio 2: RefaÃ§a o exercÃ­cio de estimadores usando funÃ§Ãµes
 
 
 
-# Aproximação de intergrais por Monte Carlo ---------------------
+# AproximaÃ§Ã£o de intergrais por Monte Carlo ---------------------
 
-# Imagine que queremos calcular a integral da função f(x) = sen(x)
+# Imagine que queremos calcular a integral da funÃ§Ã£o f(x) = sen(x)
 # entre 0 e 2*pi. 
-# Analiticamente, temos que a primitiva de sen(x) é -cos(x), e
+# Analiticamente, temos que a primitiva de sen(x) Ã© -cos(x), e
 # avaliando-a em 2* e 0, temos -1 -(-1) = -1 + 1 = 0
 
-# Mas como faríamos isso computacionalmente, isto é, aproximando
-# através de um algoritmo em vez de determinar a primitiva?
+# Mas como farÃ­amos isso computacionalmente, isto Ã©, aproximando
+# atravÃ©s de um algoritmo em vez de determinar a primitiva?
 
 
-# Pelo cálculo integral, podemos aproximar a área sobre o gráfico de
-# uma função f(x) entre x = a e x = b dividindo esse intervalo em
-# n intervalos menores, avaliando a função f para x em cada um desses
+# Pelo cÃ¡lculo integral, podemos aproximar a Ã¡rea sobre o grÃ¡fico de
+# uma funÃ§Ã£o f(x) entre x = a e x = b dividindo esse intervalo em
+# n intervalos menores, avaliando a funÃ§Ã£o f para x em cada um desses
 # intervalos menores e multiplicando pelo tamanho desses subintervalos.
-# Isso corresponde a dividir o gráfico em "retângulos" e aproximar a 
-# área sobre a curva pela soma das áreas dos n retângulos.
+# Isso corresponde a dividir o grÃ¡fico em "retÃ¢ngulos" e aproximar a 
+# Ã¡rea sobre a curva pela soma das Ã¡reas dos n retÃ¢ngulos.
 
-# A integral definida de f(x) entre x = a e x = b é o limite dessa soma
-# de n retângulos quando n tende ao infinito.
+# A integral definida de f(x) entre x = a e x = b Ã© o limite dessa soma
+# de n retÃ¢ngulos quando n tende ao infinito.
 
-# Podemos simular esse cálculo gerando gerando um vetor de n números 
-# pseudoaleatórios uniformes no intervalo (a,b), aplicando-os em f,
-# e depois multiplicando o tamanho do intervalo pelo valor médio de f.
+# Podemos simular esse cÃ¡lculo gerando gerando um vetor de n nÃºmeros 
+# pseudoaleatÃ³rios uniformes no intervalo (a,b), aplicando-os em f,
+# e depois multiplicando o tamanho do intervalo pelo valor mÃ©dio de f.
 
 # Vamos voltar para nosso exemplo de f(x) = sen(x), com x entre 0 e 2*pi.
 
-# Analiticamente, já sabemos que o valor da integral é zero. Veja agora
-# como aproximamos por uma simulação de Monte Carlo.
+# Analiticamente, jÃ¡ sabemos que o valor da integral Ã© zero. Veja agora
+# como aproximamos por uma simulaÃ§Ã£o de Monte Carlo.
 
 set.seed(0)
 
 vetor_ab <- runif(1e4, 0, 2*pi) # Aqui temos 10000 valores no intervalo
 
-mean(sin(vetor_ab)) # Nosso Valor médio da função no intervalo
+mean(sin(vetor_ab)) # Nosso Valor mÃ©dio da funÃ§Ã£o no intervalo
 
-(2*pi - 0)*mean(sin(vetor_ab)) # Nossa aproximação para a integral
+(2*pi - 0)*mean(sin(vetor_ab)) # Nossa aproximaÃ§Ã£o para a integral
 
 
-# Exercício: determine o valor da integral de f(x) = x^2 com x entre -1
-# e 3, computacionalmente (por funções) e analiticamente (pela integral).
+# ExercÃ­cio: determine o valor da integral de f(x) = x^2 com x entre -1
+# e 3, computacionalmente (por funÃ§Ãµes) e analiticamente (pela integral).
 
 
 # Computacionalmente:
 
-# Função que aproxima integrais recebendo o número de pontos a serem gerados,
-# a função, e pontos inicial e final do intervalo.
+# FunÃ§Ã£o que aproxima integrais recebendo o nÃºmero de pontos a serem gerados,
+# a funÃ§Ã£o, e pontos inicial e final do intervalo.
 int_mc <- function(N = 1e4, FUN, a, b){
   x <- runif(n = N, min = a, max = b)
   (b - a) * mean(FUN(x))
 }
 
-# Função f(x) = x^2
+# FunÃ§Ã£o f(x) = x^2
 x_quadrado <- function(x){
   x ^ 2
 }
@@ -149,21 +149,21 @@ x_quadrado <- function(x){
 # Fixando a semente
 set.seed(0)
 
-# Temos aqui nossa aproximação:
+# Temos aqui nossa aproximaÃ§Ã£o:
 int_mc(N = 1000, x_quadrado, a = -1, b = 3)
 
 
 # Analiticamente:
 
-# A primitiva de x^2 é (x^3)/3. Avaliando em 3 e -1, temos
+# A primitiva de x^2 Ã© (x^3)/3. Avaliando em 3 e -1, temos
 # 27/3 - (-1)/3 = 28/3
 
 28/3
 
-# Compare os resultados. Eles são próximos?
+# Compare os resultados. Eles sÃ£o prÃ³ximos?
 
 
-# Exercício: Vamos agora integrar a função densidade de uma v.a.
+# ExercÃ­cio: Vamos agora integrar a funÃ§Ã£o densidade de uma v.a.
 # X~Exp(1.5) de 0 a 5
 
 x_exp <- function(x){
@@ -176,15 +176,15 @@ set.seed(0)
 int_mc(N = 1000, x_exp, a = 0, b = 5)
 
 
-# Exercício: Crie uma função que aproxime pi pela área delimitada
-# por uma circunferência de raio 1.
+# ExercÃ­cio: Crie uma funÃ§Ã£o que aproxime pi pela Ã¡rea delimitada
+# por uma circunferÃªncia de raio 1.
 
-# Nos exemplos anteriores, estimamos a área sobre a curva do gráfico de uma função.
+# Nos exemplos anteriores, estimamos a Ã¡rea sobre a curva do grÃ¡fico de uma funÃ§Ã£o.
 
-# Podemos utilizar um raciocínio semelhante aqui: se considerarmos a curva 
-# formada pela circunferência de raio 1 no primeiro quadrante, a proporção
-# entre os pontos dentro da circunferência sobre a área total corresponde
-# à área da parte da circunferência no primeiro quadrante, pi/4.
+# Podemos utilizar um raciocÃ­nio semelhante aqui: se considerarmos a curva 
+# formada pela circunferÃªncia de raio 1 no primeiro quadrante, a proporÃ§Ã£o
+# entre os pontos dentro da circunferÃªncia sobre a Ã¡rea total corresponde
+# Ã  Ã¡rea da parte da circunferÃªncia no primeiro quadrante, pi/4.
 
 aprox_pi <- function(N = 1e4){
   
@@ -197,11 +197,8 @@ aprox_pi <- function(N = 1e4){
   4*length(vetor_raio[vetor_raio <= 1])/length(vetor_raio)
 }
 
-set.seed(0)
-
-aprox_pi(1e6)
-
-# Outra implementação do mesmo raciocínio:
+# Outra implementaÃ§Ã£o do mesmo raciocÃ­nio.
+# Veja que em R Ã© possÃ­vel declarar funÃ§Ãµes dentro de outras funÃ§Ãµes
 
 aproxpi <- function(N = 1e4){
   
@@ -209,7 +206,7 @@ aproxpi <- function(N = 1e4){
   
   y <- runif(n = N, min = 0, max = 1)
   
-  # A função sucesso() checa se o ponto têm distancia ao centro
+  # A funÃ§Ã£o sucesso() checa se o ponto tÃªm distancia ao centro
   # menot ou igual a 1
   sucesso <- function(x, y){
     ifelse(((x^2 + y^2) <= 1), TRUE, FALSE)
@@ -221,5 +218,7 @@ aproxpi <- function(N = 1e4){
 }
 
 set.seed(0)
+aprox_pi(1e6)
 
+set.seed(0)
 aproxpi(1e6)
