@@ -194,7 +194,7 @@ aprox_pi <- function(N = 1e4){
   
   vetor_raio <- vetor_x^2 + vetor_y^2
   
-  4*length(vetor_raio[vetor_raio <= 1])/length(vetor_raio)
+  4*length(vetor_raio[vetor_raio <= 1])/N
 }
 
 # Outra implementação do mesmo raciocínio.
@@ -206,8 +206,8 @@ aproxpi <- function(N = 1e4){
   
   y <- runif(n = N, min = 0, max = 1)
   
-  # A função sucesso() checa se o ponto têm distancia ao centro
-  # menot ou igual a 1
+  # A função sucesso() checa se o ponto tem distancia ao centro
+  # menor ou igual a 1
   sucesso <- function(x, y){
     ifelse(((x^2 + y^2) <= 1), TRUE, FALSE)
   }
