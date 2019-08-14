@@ -48,3 +48,5 @@ Aula 15 (07/08/2019): Funções (continuação), cálculo de integrais por simul
 Aula Cancelada (12/08/2019)
 
 Aula 16 (14/08/2019): Implementando funções que usam simulações de Monte Carlo
+
+Segunda Avaliação (26/08/2019)
