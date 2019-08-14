@@ -44,3 +44,7 @@ Aula 14 (31/07/2019): Testando estimadores com simulações de Monte Carlo, fun�
 Sem aula (05/08/2019): Aniversário de João Pessoa
 
 Aula 15 (07/08/2019): Funções (continuação), cálculo de integrais por simulação de Monte Carlo
+
+Aula Cancelada (12/08/2019)
+
+Aula 16 (14/08/2019):
