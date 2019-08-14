@@ -1,64 +1,64 @@
-# IntroduÁ„o a softwares estatÌsticos
+# Introdu√ß√£o a softwares estat√≠sticos
 # Data: 31/07/2019
 # Aula: 14
-# Assunto: Estimadores e funÁıes
+# Assunto: Estimadores e fun√ß√µes
 
 
 # Estimadores --------------------------------------------------------
 
-# ExercÌcio: Seja X1, X2, ... , Xn uma amostra aleatÛria da vari·vel
-# aleatÛria X~N(mi, sigma2). AlÈm disso, considere os seguintes 
-# estimadores da vari‚ncia sigma de X, sigma_c2 e S2, apresentados abaixo:
+# Exerc√≠cio: Seja X1, X2, ... , Xn uma amostra aleat√≥ria da vari√°vel
+# aleat√≥ria X~N(mi, sigma2). Al√©m disso, considere os seguintes 
+# estimadores da vari√¢ncia sigma de X, sigma_c2 e S2, apresentados abaixo:
 
-# sigma_c2 = somatÛrio((Xi - media_amostral)^2) / n
+# sigma_c2 = somat√≥rio((Xi - media_amostral)^2) / n
 
-# S2 =  somatÛrio((Xi - media_amostral)^2) / (n - 1)
+# S2 =  somat√≥rio((Xi - media_amostral)^2) / (n - 1)
 
-# Uma forma de compararmos dois estimadores È atravÈs do Erro Quadr·tico
-# MÈdio (EQM) dos estimadores. Dessa forma, sejam theta_1 e theta_2 dois
-# estimadores para um par‚metro theta desconhecido. Diremos que theta_1 
-# È melhor que theta_2 se:
+# Uma forma de compararmos dois estimadores √© atrav√©s do Erro Quadr√°tico
+# M√©dio (EQM) dos estimadores. Dessa forma, sejam theta_1 e theta_2 dois
+# estimadores para um par√¢metro theta desconhecido. Diremos que theta_1 
+# √© melhor que theta_2 se:
 
 # EQM(theta_1) <= EQM(theta_2)
 
 # Onde EQM(theta_) = E[(theta_c - theta)^2] (valor esperado do quadrado da
-#                                           diferenÁa entre o estimador e
-#                                           o par‚metro)
+#                                           diferen√ßa entre o estimador e
+#                                           o par√¢metro)
 
-# Ou tambÈm: EQM(theta_c) = Var(theta_c) + (E(theta_c) - theta)^2
-#            (soma da vari‚ncia e do quadrado da diferenÁa entre o valor
-#             esperado do estimador e do par‚metro. Esta diferenÁa tambÈm
-#             È chamada viÈs.)
+# Ou tamb√©m: EQM(theta_c) = Var(theta_c) + (E(theta_c) - theta)^2
+#            (soma da vari√¢ncia e do quadrado da diferen√ßa entre o valor
+#             esperado do estimador e do par√¢metro. Esta diferen√ßa tamb√©m
+#             √© chamada vi√©s.)
 
 
 
-# ExercÌcio: Abaixo est· representado um algoritmo para implementaÁ„o
-# da simulaÁ„o, em que levar· em consideraÁ„o 20000 iteraÁıes.
+# Exerc√≠cio: Abaixo est√° representado um algoritmo para implementa√ß√£o
+# da simula√ß√£o, em que levar√° em considera√ß√£o 20000 itera√ß√µes.
 
-# Para cada uma das 20000 iteraÁıes:
-# 1) Gere uma amostra aleatÛria de tamanho n, tal que Xi~N(0,1) (X tem
-# distribuiÁ„o normal de mÈdia zero e vari‚ncia 1), para todo i.
+# Para cada uma das 20000 itera√ß√µes:
+# 1) Gere uma amostra aleat√≥ria de tamanho n, tal que Xi~N(0,1) (X tem
+# distribui√ß√£o normal de m√©dia zero e vari√¢ncia 1), para todo i.
 # 2) Obtenha as estimativas sigma_c2 e S2
-# 3) Calcule o EQM e o viÈs tanto de sigma_c2 e de S2 
+# 3) Calcule o EQM e o vi√©s tanto de sigma_c2 e de S2 
 
 
-# Temos que os estimadores sigma_c2 e S2 correspondem ‡ vari‚ncia
+# Temos que os estimadores sigma_c2 e S2 correspondem √† vari√¢ncia
 # populacional e amostral, respectivamente.
 
 
 variancia <- function(x, pop = FALSE){
   
-  # Para o argumento "pop" (populaÁ„o)
+  # Para o argumento "pop" (popula√ß√£o)
   
   if(pop)
     sum((x - mean(x))^2)/length(x)
   else
-    var(x) # var() È a o c·lculo de vari‚ncia amostral:
+    var(x) # var() √© a o c√°lculo de vari√¢ncia amostral:
            # var(x) = sum((x - mean(x))^2)/(length(x) - 1)
 }
 
 
-# Mais informaÁıes sobre var()
+# Mais informa√ß√µes sobre var()
 
 ?var
 stats::var
@@ -74,76 +74,79 @@ n <- 20
 vetor_sigma2 <- numeric(N)
 vetor_s2 <- numeric(N)
 
-# Para replicaÁ„o dos resultados
+# Para replica√ß√£o dos resultados
 
 set.seed(0)
 
 for(i in 1:N){
   amostra <- rnorm(n = n, mean = 0, sd = 1) # Amostra
   
-  vetor_sigma2[i] <- variancia(x = amostra, pop = TRUE) # Vari‚ncia Populacional
-  vetor_s2[i] <- variancia(x = amostra, pop = FALSE)    # Vari‚ncia Amostral
+  vetor_sigma2[i] <- variancia(x = amostra, pop = TRUE) # Vari√¢ncia Populacional
+  vetor_s2[i] <- variancia(x = amostra, pop = FALSE)    # Vari√¢ncia Amostral
 
 }
 
-# MÈdia dos estimadores. Qual deles se aproximou mais do valor
-# real do par‚metro, vari‚ncia de X?
+# M√©dia dos estimadores. Qual deles se aproximou mais do valor
+# real do par√¢metro, vari√¢ncia de X?
 
 mean(vetor_sigma2); mean(vetor_s2)
 
-# ViÈs dos estimadores.
+# Vi√©s dos estimadores. (diferen√ßa entre o valor esperado do estimador
+# e valor verdadeiro do par√¢metro) 
 
 bias_sigma2 <- mean(vetor_sigma2) - 1
 bias_s2 <- mean(vetor_s2) - 1
 
-bias_sigma2; bias_s2
+# Em m√≥dulo:
+abs(bias_sigma2); abs(bias_s2)
 
 
-# Vari‚ncia dos estimadores. Qual deles · mais eficiente? (vari‚ncia menor)
+# Vari√¢ncia dos estimadores. Qual deles √° mais eficiente? (vari√¢ncia menor)
 
 var_sigma2 <- var(vetor_sigma2); var_s2 <- var(vetor_s2)
 
 var_sigma2; var_s2
 
 
-# Erro Quadr·tico MÈdio. Qual deles È mais consistente? (menor EQM)
+# Erro Quadr√°tico M√©dio. Qual deles √© mais consistente? (menor EQM)
 
 eqm_sigma2 <- var_sigma2 - (bias_sigma2)^2
 eqm_s2 <- var_s2 - (bias_s2)^2
 
+eqm_sigma2; eqm_s2
 
-# De acordo com seus conhecimentos de Probabilidade e InferÍncia,
+# De acordo com seus conhecimentos de Probabilidade e Infer√™ncia,
 # o que se esperava desses resultados?
 
 
-# FunÁıes ---------------------------------
+# Fun√ß√µes ---------------------------------
 
-# Sintaxe da declaraÁ„o de uma funÁ„o em R:
+# Sintaxe da declara√ß√£o de uma fun√ß√£o em R:
 
 # nome_da_funcao <- function(argumentos){
-#                 bloco de cÛdigo da funÁ„o
+#                 bloco de c√≥digo da fun√ß√£o
 # }
 
-# OBS: Sobre funÁıes de mesmo nome: a presenÁa de duas funÁıes de
-# mesmo nome em pacotes R instalados n„o causa erros, mas sua
-# execuÁ„o, sim. Algumas soluÁoes para se contornar esse problema s„o:
+# OBS: Sobre fun√ß√µes de mesmo nome: a presen√ßa de duas fun√ß√µes de
+# mesmo nome em pacotes R instalados n√£o causa erros, mas sua
+# execu√ß√£o, sim. Algumas solu√ßoes para se contornar esse problema s√£o:
 
-# 1) Criar funÁıes cujo nome n„o est· sendo usado, como foi 
-# feito anteriormente para o c·lculo da vari‚ncia
+# 1) Criar fun√ß√µes cujo nome n√£o est√° sendo usado, como foi 
+# feito anteriormente para o c√°lculo da vari√¢ncia
 
-# 2) Explicitar o ambiente da funÁ„o ao cham·-la
+# 2) Explicitar o ambiente da fun√ß√£o ao cham√°-la
 
-stats::var() # FunÁ„o para c·lculo de vari‚ncia que vem do pacote stats
+stats::var() # Fun√ß√£o para c√°lculo de vari√¢ncia que vem do pacote stats
 
 # A aba "Environment" permite ver os objetos (valores, data frames,
-# funÁıes, etc.) em uso. De acordo com seu ambiente. Assim, È possÌvel
-# utilizar duas funÁıes de mesmo nome mas comportamentos diferentes
-# desde que se expecifique de onde elas vÍm.
+# fun√ß√µes, etc.) em uso. De acordo com seu ambiente. Assim, √© poss√≠vel
+# utilizar duas fun√ß√µes de mesmo nome mas comportamentos diferentes
+# desde que se expecifique de onde elas v√™m.
 
 
-# Apesar de ser desej·vel que uma funÁ„o contenha argumentos que
-# possam receber dados e informaÁıes de como processar as informaÁıes
-# passadas, È possÌvel que uma funÁ„o n„o possua nenhum argumento.
+# Apesar de ser desej√°vel que uma fun√ß√£o contenha argumentos que
+# possam receber dados e informa√ß√µes de como processar as informa√ß√µes
+# passadas, √© poss√≠vel que uma fun√ß√£o n√£o possua nenhum argumento.
 
 funcao <- function(){
   cat(paste(c("<3", LETTERS[c(1,13,15)], " ", LETTERS[c(13,5,21)],
@@ -152,73 +155,73 @@ funcao <- function(){
 }
 
 
-# Note que a criaÁ„o de uma funÁ„o consiste na atribuiÁ„o do
-# conte˙do no bloco de cÛdigo que compıe a funÁ„o e seus
+# Note que a cria√ß√£o de uma fun√ß√£o consiste na atribui√ß√£o do
+# conte√∫do no bloco de c√≥digo que comp√µe a fun√ß√£o e seus
 # argumentos a um nome, como qualquer objeto da linguagem R.
 
 
-# Exemplo: corra o cÛdigo abaixo. Ele corresponde a uma funÁ„o que
+# Exemplo: corra o c√≥digo abaixo. Ele corresponde a uma fun√ß√£o que
 # converte o valor de uma temperatura em graus Celsius para o valor
 # correspondente em graus Fahrenheit.
 
-celsiustofar <- function(cel){ # Argumento da funÁ„o: temperatura informada
+celsiustofar <- function(cel){ # Argumento da fun√ß√£o: temperatura informada
   
-  temperatura <- 1.8 * cel + 32 # instruÁ„o a ser executada
+  temperatura <- 1.8 * cel + 32 # instru√ß√£o a ser executada
   
   temperatura # Resultado a ser retornado
 }
 
-# OBS1: em C, È preciso explicitar o que uma funÁ„o deve retornar.
-# Em R, por padr„o se retorna o resultado da ˙ltima operaÁ„o da funÁ„o.
+# OBS1: em C, √© preciso explicitar o que uma fun√ß√£o deve retornar.
+# Em R, por padr√£o se retorna o resultado da √∫ltima opera√ß√£o da fun√ß√£o.
 
-# OBS2: Como em outros comandos, caso a funÁ„o a ser criada ocupe apenas
-# uma linha, os {} s„o opcionais. A funÁ„o celsiustofar() poderia ter
+# OBS2: Como em outros comandos, caso a fun√ß√£o a ser criada ocupe apenas
+# uma linha, os {} s√£o opcionais. A fun√ß√£o celsiustofar() poderia ter
 # sido declarada assim:
 
 celsiustofar <- function(cel) temperatura <- 1.8 * cel + 32
 
 
-# ExercÌcio: Considere no exemplo o vetor abaixo. Quais alteraÁıes s„o
-# necess·rias para que nossa funÁ„o celsiustofar() converta todas as 
+# Exerc√≠cio: Considere no exemplo o vetor abaixo. Quais altera√ß√µes s√£o
+# necess√°rias para que nossa fun√ß√£o celsiustofar() converta todas as 
 # 11 teperaturas de uma vez?
 
 temp <- c(27.8, 19.3, 20.7, 18.29, 25.0, 25.1, 32.3,
           37.6, 32.2, 19.02, 22.75)
 
-# Resposta: nenhuma! R È uma linguagem vetorial, ou seja, enquante em C
-# poderÌamos ter uma vari·vel com apenas um valor, em R ela È na verdade
+# Resposta: nenhuma! R √© uma linguagem vetorial, ou seja, enquante em C
+# poder√≠amos ter uma vari√°vel com apenas um valor, em R ela √© na verdade
 # um vetor com apenas um elemento. Portanto, diferentemente de C, em R
-# n„o È preciso um loop para se percorrer um vetor com nossa funÁ„o
+# n√£o √© preciso um loop para se percorrer um vetor com nossa fun√ß√£o
 
 celsiustofar(25)
 
 celsiustofar(temp)
 
 
-# Agora, altere a funÁ„o celsiustofar() apresentada no exemplo anterior
-# de modo que a funÁ„o possa conveter a temperatura de graus Celsius
+# Agora, altere a fun√ß√£o celsiustofar() apresentada no exemplo anterior
+# de modo que a fun√ß√£o possa conveter a temperatura de graus Celsius
 # para Fahrentheit ou de graus Fahrenheit para Celsius
 
 
 temp_convert <- function(temp, c_para_f = TRUE){
   
-  # … possÌvel instanciar valores padr„o para os argumentos de funÁıes
-  # Isso se faz quando se d· um valor na declaraÁ„o da funÁ„o, e este
-  # ser· utilizado caso o usu·rio n„o o informe.
+  # √â poss√≠vel instanciar valores padr√£o para os argumentos de fun√ß√µes
+  # Isso se faz quando se d√° um valor na declara√ß√£o da fun√ß√£o, e este
+  # ser√° utilizado caso o usu√°rio n√£o o informe.
   
   
   c_para_f <- as.logical(c_para_f) # Caso c_para_f seja informado como uma
-                                   # string, È possÌvel converter para 
-                                   # um valor lÛgico
+                                   # string, √© poss√≠vel converter para 
+                                   # um valor l√≥gico
   
   if(! is.logical(c_para_f) | is.na(c_para_f)) # Em caso de erros
-    stop("Um valor lÛgico n„o foi informado.")
+    stop("Um valor l√≥gico n√£o foi informado.")
   
   if(c_para_f == TRUE)
     temperatura <- 1.8 * temp + 32
   
   else
-    temperatura <- (temp - 32) /1.8 # OperaÁ„o reversa ‡ anterior
+    temperatura <- (temp - 32) /1.8 # Opera√ß√£o reversa √† anterior
     
   temperatura
     
@@ -235,36 +238,36 @@ stop("Exemplo de uma mensagem de erro.")
 
 warning("Exemplo de uma mensagem de aviso.")
 
-# A diferenÁa est· no fato de stop() interromper imediatamente a
-# execuÁ„o do cÛdigo e warning() n„o, sendo exibido apenas apÛs
-# a execuÁ„o do cÛdigo. Eles servem para indicar para o usu·rio
-# que a funÁ„o est· sendo usada de forma incorreta ou inaporpriada.
+# A diferen√ßa est√° no fato de stop() interromper imediatamente a
+# execu√ß√£o do c√≥digo e warning() n√£o, sendo exibido apenas ap√≥s
+# a execu√ß√£o do c√≥digo. Eles servem para indicar para o usu√°rio
+# que a fun√ß√£o est√° sendo usada de forma incorreta ou inaporpriada.
 
 for(i in 1:5){
-  cat("IteraÁ„o",i,"\n", sep = " ")
+  cat("Itera√ß√£o",i,"\n", sep = " ")
   if(i == 3)
     stop("O stop() parou o loop")
 }
 
 for(i in 1:5){
-  cat("IteraÁ„o",i,"\n", sep = " ")
+  cat("Itera√ß√£o",i,"\n", sep = " ")
   if(i == 3)
-    warning("O warning() n„o parou o loop.")
+    warning("O warning() n√£o parou o loop.")
 }
 
-# ExercÌcio: construa uma funÁ„o que calcula o IMC (Õndice de Massa
-# corpÛrea) de uma pesoa e retorne o IMC e a situaÁ„o da pessoa
-# em relaÁ„o ao peso.
+# Exerc√≠cio: construa uma fun√ß√£o que calcula o IMC (√çndice de Massa
+# corp√≥rea) de uma pesoa e retorne o IMC e a situa√ß√£o da pessoa
+# em rela√ß√£o ao peso.
 
 # Nota: IMC = peso / (altura^2)
 
 funcao_imc <- function(peso, altura){
   
-  # A altura dever· ser informada em metros.
-  # O peso dever· ser informado em kg.
+  # A altura dever√° ser informada em metros.
+  # O peso dever√° ser informado em kg.
   
-  # Podemos fazer com que o programa n„o retorne nada
-  # para informaÁıes negativas
+  # Podemos fazer com que o programa n√£o retorne nada
+  # para informa√ß√µes negativas
   
   if(peso <= 0 || altura <= 0)
     return(NULL)
@@ -287,7 +290,7 @@ funcao_imc <- function(peso, altura){
   else if(imc >= 35 && imc < 39.99)
     situacao <- "Obesidade II (severa)"
   else
-    situacao <- "Obesidade III (mÛrbida)"
+    situacao <- "Obesidade III (m√≥rbida)"
   
   
   list(imc, situacao)
@@ -295,4 +298,4 @@ funcao_imc <- function(peso, altura){
 }
 
 # OBS: caso se deseje que o programa termine e retorne algo
-# antes do fim do bloco de cÛdigo, basta usar a instruÁ„o return().
+# antes do fim do bloco de c√≥digo, basta usar a instru√ß√£o return().
