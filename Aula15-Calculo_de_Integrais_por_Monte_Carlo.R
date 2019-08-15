@@ -38,8 +38,10 @@ trunc(c(2.3, 1.9, 3.5))
 
 # cumsum(x): soma acumulada dos elementos de x
 # cumprod(x): produto acumulador dos elementos de x
-# match(x): retorna
-# union(x): retorna os elementos que pertencem a  ou y
+# match(x): retorna as posições que os elementos de x correspondem em y.
+#           pode ser passado como índice para y e retornar o que os elementos de x
+#           correspondem em y.
+# union(x): retorna os elementos que pertencem a x ou y
 # intersect(x): retorna os elementos que pertencem a x e y
 
 
@@ -74,12 +76,22 @@ trunc(c(2.3, 1.9, 3.5))
 
 # Alguns exemplos:
 
+# sort():
 sort(c(10,9,13,12))
+# rank():
 rank(c(3,7,4,8,2))
+# union():
 union(1:3, 4:8)
+# intersect():
 intersect(1:5, 4:8)
+# setdiff():
 setdiff(c(1,2,3,4), c(2,4))
+# is.element():
 is.element(c(1,12,5,7,19,5), 1:8)
+# match():
+x <- c(1,2,3,2,3,1)
+y <- c("A" = 1,"B" = 2,"C" = 3)
+y[match(x,y)]
 
 b <- c(1,3)
 diag(b, nrow = 4)
