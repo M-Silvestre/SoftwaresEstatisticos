@@ -1,22 +1,22 @@
-# Introdução a softwares estatísticos
+# IntroduÃ§Ã£o a softwares estatÃ­sticos
 # Data: 14/08/2019
 # Aula: 16
-# Assunto: Implementando funções com Monte Carlo
+# Assunto: Implementando funÃ§Ãµes com Monte Carlo
 
 
-# Resolvendo problemas com funções e Monte Carlo ----------------------------
+# Resolvendo problemas com funÃ§Ãµes e Monte Carlo ----------------------------
 
 
-# Revise o assunto de estimadores abordado na aula 14. Crie uma função que 
-# abranja todo o exercício anterior, isto é, que calcule estimativas para
-# a variância de uma v.a. normal recebendo como argumentos o número de iterações,
-# o tamanho das amostras aleatórias, e os parâmetros reais mi (média) e 
-# sigma (desvio padrão).
+# Revise o assunto de estimadores abordado na aula 14. Crie uma funÃ§Ã£o que 
+# abranja todo o exercÃ­cio anterior, isto Ã©, que calcule estimativas para
+# a variÃ¢ncia de uma v.a. normal recebendo como argumentos o nÃºmero de iteraÃ§Ãµes,
+# o tamanho das amostras aleatÃ³rias, e os parÃ¢metros reais mi (mÃ©dia) e 
+# sigma (desvio padrÃ£o).
 
 estimadores_de_variancia <- function(N = 2e4, n = 20, mi = 0, sigma_2 = 1){
   
   
-  # Vamos definir a função para variância populacional e amostral,
+  # Vamos definir a funÃ§Ã£o para variÃ¢ncia populacional e amostral,
   # assim como no exemplo
   variancia <- function(x, pop = FALSE){
     
@@ -24,14 +24,14 @@ estimadores_de_variancia <- function(N = 2e4, n = 20, mi = 0, sigma_2 = 1){
       # variancia populaiocnal (estimador sigma2)
       sum((x - mean(x))^2)/length(x)
     else
-      # Variância amostral (estimador S2)
+      # VariÃ¢ncia amostral (estimador S2)
       var(x)
   }
   
   # Vamos criar um vetor de zeros onde armazenaremos os valores de cada amostra
   amostra <- numeric(n)
   
-  # Vamostambém criar vetores de zeros, onde armazenaremos os valores dos
+  # VamostambÃ©m criar vetores de zeros, onde armazenaremos os valores dos
   # estimadores em cada amostra.
   vetor_sigma2 <- numeric(N)
   vetor_s2 <- numeric(N)
@@ -39,8 +39,8 @@ estimadores_de_variancia <- function(N = 2e4, n = 20, mi = 0, sigma_2 = 1){
   
   for(i in 1:N){
     
-    # Geramos n valores pseudoaleatórios de acordo com os parâmetros
-    # informads pelo usuário:
+    # Geramos n valores pseudoaleatÃ³rios de acordo com os parÃ¢metros
+    # informads pelo usuÃ¡rio:
     amostra <-  rnorm(n = n, mean = mi, sd = sqrt(sigma_2))
     
     # Esimativa de sigma2 para a amostra
@@ -50,8 +50,8 @@ estimadores_de_variancia <- function(N = 2e4, n = 20, mi = 0, sigma_2 = 1){
     vetor_s2[i] <- variancia(amostra, F)
   }
   
-  # Ao final da função, ela deve retornar uma lista com o valor esperado,
-  # viés, variância e erro quadrático médio dos indicadores sigma2 e S2.
+  # Ao final da funÃ§Ã£o, ela deve retornar uma lista com o valor esperado,
+  # viÃ©s, variÃ¢ncia e erro quadrÃ¡tico mÃ©dio dos indicadores sigma2 e S2.
   
   list(Valor_Esperador_Sigma2 = mean(vetor_sigma2),
        Valor_Esperado_S2 = mean(vetor_s2),
@@ -65,19 +65,19 @@ estimadores_de_variancia <- function(N = 2e4, n = 20, mi = 0, sigma_2 = 1){
 }
 
 # Avaliando nossos estimadores simulando 10000 amostras de tamanho 20 de
-# uma v.a. Normal padrão.
+# uma v.a. Normal padrÃ£o.
 set.seed(0)
 estimadores_de_variancia(1e4,20)
 
-# Nossa função também funciona para v.a. normal de média diferente de 0 e 
-# variância diferente de 1
+# Nossa funÃ§Ã£o tambÃ©m funciona para v.a. normal de mÃ©dia diferente de 0 e 
+# variÃ¢ncia diferente de 1
 set.seed(0)
 estimadores_de_variancia(1e4,20, 10,3)
 
 
-# Exercício 2: Crie uma função que simule o arremesso de dois
+# ExercÃ­cio 2: Crie uma funÃ§Ã£o que simule o arremesso de dois
 # dados equilibrados e estime a probabilidade da soma das faces
-# ser par, através de um número grande de lançamentos.
+# ser par, atravÃ©s de um nÃºmero grande de lanÃ§amentos.
 
 
 soma_par <- function(N = 1e4){
@@ -93,7 +93,7 @@ soma_par <- function(N = 1e4){
   
   for(i in 1:N){
     amostra <- sum(sample(x = 1L:6L,size = 2,replace = T))
-    # Amostra de 2 números entre 1 e 6, com reposição
+    # Amostra de 2 nÃºmeros entre 1 e 6, com reposiÃ§Ã£o
     sucessos[i] <- checa_par(amostra)
   }
   sum(sucessos)/N
@@ -101,7 +101,7 @@ soma_par <- function(N = 1e4){
 
 
 # Analiticamente, sabemos que a probabilidade da soma das faces dados
-# ser par é 1/2 ou 0.5, e o valor estimado pelas simulações é:
+# ser par Ã© 1/2 ou 0.5, e o valor estimado pelas simulaÃ§Ãµes Ã©:
 
 set.seed(0)
 soma_par(1e5)
