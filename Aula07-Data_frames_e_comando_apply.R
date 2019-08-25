@@ -20,7 +20,7 @@ df <- data.frame(aluno = alunos, notas = NA)
 
 df$notas <- avaliacoes
 
-# Porém, observe que atribuir uma lista no momento de criação do data frame.
+# Porém, observe que atribuir uma lista no momento de criação do data frame gera um erro.
 # Veja:
 
 df <- data.frame(aluno = alunos, 
