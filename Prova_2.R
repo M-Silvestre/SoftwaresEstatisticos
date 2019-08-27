@@ -1,10 +1,10 @@
-# IntroduÁ„o a softwares estatÌsticos
+# Introdu√ß√£o a softwares estat√≠sticos
 # Data: 26/08/2019
 # Segunda Prova
 
-# Primeira quest„o ------------------------------------------------
+# Primeira quest√£o ------------------------------------------------
 
-# Implemente a simulaÁ„o de n lanÁamentos de uma moeda honesta
+# Implemente a simula√ß√£o de n lan√ßamentos de uma moeda honesta
 # e aproxime a probabilidade de obter resultado cara.
 
 p_moeda <- function(n){
@@ -14,20 +14,20 @@ p_moeda <- function(n){
   mean(resultados)
 }
 
-# Fixando a semente e aplicando a funÁ„o
+# Fixando a semente e aplicando a fun√ß√£o
 set.seed(0)
 p_moeda(1e4)
-# Resultado: Para 100.000 repetiÁıes, estima-se que a probabilidade
-# de dar cara È de aproximadamente 0.496
+# Resultado: Para 10.000 repeti√ß√µes, estima-se que a probabilidade
+# de obter cara em um lan√ßamento √© de aproximadamente 0.502
 
-# Segunda Quest„o --------------------------------------------------------
+# Segunda Quest√£o --------------------------------------------------------
 
-# Seja um experimento aleatÛrio com as seguintes regras:
-# 1) Se escolhe um n˙mero entre 2 e 400
-# 2) Retira-se duas bolas numeradas de 1 a 200 de uma urna (com reposiÁ„o)
-# 3) As retiradas ocorrem atÈ a soma do n˙meros retirados for igual
-#    ao n˙mero fixado inicialmente.
-# Simule 10000 repetiÁıes desse experimento e estime o n˙mero mÈdio de
+# Seja um experimento aleat√≥rio com as seguintes regras:
+# 1) Se escolhe um n√∫mero entre 2 e 400
+# 2) Retira-se duas bolas numeradas de 1 a 200 de uma urna (com reposi√ß√£o)
+# 3) As retiradas ocorrem at√© a soma do n√∫meros retirados for igual
+#    ao n√∫mero fixado inicialmente.
+# Simule 10000 repeti√ß√µes desse experimento e estime o n√∫mero m√©dio de
 # retiradas esperado.
 
 m_retiradas <- function(n, N = 1e4){
@@ -43,23 +43,37 @@ m_retiradas <- function(n, N = 1e4){
   mean(resultados)
 }
 
-# Fixando-se a semente e aplicando a funÁ„o
+# Fixando-se a semente e aplicando a fun√ß√£o
 set.seed(0)
-m_retiradas(13, 1000)
-# Resultado: Para 1000 repetiÁıes, espera-se que a quantidade de
-# retiradas atÈ a soma ser igual ao n˙mero desejado È, em mÈdia,
-# aproximadamente 3197 retiradas.
+m_retiradas(200)
+# Resultado: Para 100.000 repeti√ß√µes do experimento, espera-se que
+# a quantidade de retiradas at√© a soma ser igual ao n√∫mero 200 seja,
+# em m√©dia, aproximadamente 200.
 
-# Terceira Quest„o ---------------------------------------------------
+
+# OBS: Esse n√∫mero esperado varia de acordo com o n√∫mero escolhido.
+# Seguem alguns valores de n e suas m√©dias, para N = 1000 e set.seed(0):
+# n =  25: 1768 retiradas
+# n =  50: 859 retiradas
+# n = 100: 399 retiradas
+# n = 150: 258 retiradas
+# n = 200: 195 retiradas
+# n = 250: 283 retiradas
+# n = 300: 385 retiradas
+# n = 350: 745 retiradas
+# n = 375: 1519 retiradas 
+
+
+# Terceira Quest√£o ---------------------------------------------------
 
 # Considere um jogo com as regras abaixo:
-# 1) Um jogador paga 15 dÛlares para comeÁar, e ganha 1,50 por
-#   lanÁamento de dois dados,
-# 2) Caso a soma do primeiro lanÁamento seja par e m˙ltipla de 3
+# 1) Um jogador paga 15 d√≥lares para come√ßar, e ganha 1,50 por
+#   lan√ßamento de dois dados,
+# 2) Caso a soma do primeiro lan√ßamento seja par e m√∫ltipla de 3
 #    o jogo acaba imediatamente,
-# 3) Caso contr·rio, o jogador realisa os prÛximos lanÁamentos atÈ
+# 3) Caso contr√°rio, o jogador realisa os pr√≥ximos lan√ßamentos at√©
 #    obter soma 11 ou 12.
-# Simule 100000 repetiÁıes desse experimento e estime o lucro
+# Simule 100000 repeti√ß√µes desse experimento e estime o lucro
 # esperado de um jogador.
 
 m_jogo <- function(N = 1e5){
@@ -80,18 +94,18 @@ m_jogo <- function(N = 1e5){
   mean(lucro)
 }
 
-# Fixando a semente e aplicando-se a funÁ„o:
+# Fixando a semente e aplicando-se a fun√ß√£o:
 set.seed(0)
 m_jogo()
-# Resultado: Espera-se que um jogador perca, em mÈdia,
-# 3,97 dÛlares por partida.
+# Resultado: Para 100.000 repeti√ß√µes spera-se que um jogador tenha,
+# em m√©dia, prejuizo de 3,97 d√≥lares por partida.
 
 
-# Quarta Quest„o -----------------------------------------------------
+# Quarta Quest√£o -----------------------------------------------------
 
-# Crie uma funÁ„o myderiv() que determine a derivada de uma funÁ„o em 
-# um ponto p, sabendo que ela È definida pelo limite de 
-# (f(p + h) - f(p))/h quando h tende a zero, isto È, pode ser aproximada por
+# Crie uma fun√ß√£o myderiv() que determine a derivada de uma fun√ß√£o em 
+# um ponto p, sabendo que ela √© definida pelo limite de 
+# (f(p + h) - f(p))/h quando h tende a zero, isto √©, pode ser aproximada por
 # um h suficientemente pequeno, mas diferente de zero.
 
 
@@ -100,24 +114,30 @@ myderiv <- function(f,x,h = 1e-3){
 }
 
 
-# Exemplos de funÁıes:
+# Exemplos de fun√ß√µes:
 f_polinomial_1 <- function(x){
   x^2 + x + 1
+  # A derivada de (x^2 + x + 1) √© (2*x + 1)
 }
 
 f_polinomial_2 <- function(x){
   x^3 - 2*x^2 + x
+  # A derivada de (x^3 - 2*x^2 + x) √© (3*x^2 -4*x + 1)
 }
 
 f_exponencial <- function(x){
   exp(2*x)
+  # A derivada de e^(2*x) √© 2*e^(2*x)
 }
 
 f_logaritmo <- function(x){
   log(3*x)
+  # Derivada de ln(3x) √© 1/x
 }
 
-myderiv(f_polinomial_1, 1)
-myderiv(f_polinomial_2, 1)
-myderiv(f_exponencial, 0)
-myderiv(f_logaritmo, 1)
+# Fun√ß√£o myderiv() comparada com os resultados esperados pelo C√°lculo Diferencial:
+
+myderiv(f = f_polinomial_1, x = 1)           # Espera-se f'(1) = 3
+myderiv(f = f_polinomial_2, x = 1, h = 1e-4) # Espera-se f'(1) = 0
+myderiv(f = f_exponencial, x = 0)            # Espera-se f'(0) = 2
+myderiv(f = f_logaritmo, x = 1, h = 1e-5)    # Espera-se f'(0) = 1
