@@ -74,6 +74,27 @@ dim(dados_5)
 # Quais são?
 estados_g <- rownames(dados_5)
 
+
+# H) Adicione ao data frame dados duas linhas com a média de
+# todas as variÁveis e variâncias, respectivamente.
+
+dados
+
+# O comando apply() percorre um data frame com uma função.
+# Com o argumento MARGIN = 1, percorre as linhas, aplicando
+# a função em cada uma. Para MARGIN = 2, ela percorre as colunas.
+# Como queremos média e variância de cada variável (coluna), fazemos
+# MARGIN = 2:
+vetor_media <- apply(X = dados, MARGIN = 2, FUN = mean)
+vetor_media
+vetor_variancia <- apply(X = dados, MARGIN = 2, FUN = var)
+vetor_variancia
+
+# Para adicionar novas linhas ao data frame, usamos o rbind():
+dados_h <- rbind(dados, Media = vetor_media, Variancia = vetor_variancia)
+dados_h
+
+
 # Operadores [] e [[]]-------------------------------------------
 
 # Podemos acessar os operador $, [[]] ou [] para acessar os elementos de uma lista
