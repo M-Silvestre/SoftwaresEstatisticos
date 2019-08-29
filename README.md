@@ -49,8 +49,12 @@ Aula Cancelada (12/08/2019)
 
 Aula 16 (14/08/2019): Implementando funções que usam simulações de Monte Carlo
 
-Aula 17 (19/08/2019): Funções compostas
+Aula 17 (19/08/2019): 
 
 Aula cancelada (21/08//2019)
 
 Segunda Avaliação (26/08/2019)
+
+Aula 18 (28/08/2019): Implementação de algoritmos de transformação de distribuições, uso de arquivos e 
+                      diretórios, comentários sobre sistemas de gerenciamento de banco de dados e sua 
+                      compatibilidade com o R
