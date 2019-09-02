@@ -58,3 +58,4 @@ Segunda Avaliação (26/08/2019)
 Aula 18 (28/08/2019): Implementação de algoritmos de transformação de distribuições, uso de arquivos e 
                       diretórios, comentários sobre sistemas de gerenciamento de banco de dados e sua 
                       compatibilidade com o R
+Aula 19 (02/09/2019): Arquivos .csv: criação, editação e leitura por comandos R
