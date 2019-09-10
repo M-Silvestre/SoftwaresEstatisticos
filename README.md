@@ -59,3 +59,7 @@ Aula 18 (28/08/2019): Implementação de algoritmos de transformação de distri
                       diretórios, comentários sobre sistemas de gerenciamento de banco de dados e sua 
                       compatibilidade com o R
 Aula 19 (02/09/2019): Arquivos .csv: criação, editação e leitura por comandos R
+
+Aula 20 (04/09/2019): Introdução a gráficos em R
+
+Aula 21 (10/09/2019): Plotagem de gráficos em R
