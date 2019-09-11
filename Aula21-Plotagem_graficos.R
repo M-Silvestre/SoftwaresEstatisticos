@@ -1,37 +1,37 @@
-# Introdu√ß√£o a softwares estat√≠sticos
+# Introdu√ß√£o a softwares estatÌsticos
 # Data: 09/09/2019
 # Aula: 21
-# Assunto: Gr√°ficos 
+# Assunto: Gr·ficos 
 
 
-# Gr√°ficos (continua√ß√£o) --------------------------------------------------
+# G·ficos (continuaÁ„o) --------------------------------------------------
 
-# Corra o c√≥digo abaixo.
+# Corra o cÛdigo abaixo.
 
-plot.new() # Cria um novo gr√°fico em branco
-plot.window(xlim = c(0,1), ylim = c(5,10)) # Estabelece a altura e largura do gr√°fico
-abline(a = 6, b = 3) # Gera o gr√°fico de uma fun√ß√£o linear (y = b*x + a) e outras retas
+plot.new() # Cria um novo gr·fico em branco
+plot.window(xlim = c(0,1), ylim = c(5,10)) # Estabelece a altura e largura do gr·fico
+abline(a = 6, b = 3) # Gera o gr·fico de uma funÁ„o linear (y = b*x + a) e outras retas
 axis(1) # Plotar o eixo X
-axis(2) #Plotar o eixo Y
-title(main = "T√≠tulo principal")
+axis(2) # Plotar o eixo Y
+title(main = "TÌtulo principal")
 title(xlab = "Eixo X")
 title(ylab = "Eixo Y")
-box() # "Fecha" o gr√°fico
-grid() # Desenha uma "malha" no gr√°fico.
+box() # "Fecha" o gr·fico
+grid() # Desenha uma "malha" no gr·fico.
 
 
-# Exerc√≠cio: Use a fun√ß√£o abline() para adicionar ao gr√°fico anterior uma
-# linha vertical em x = 0 e uma horizontal em y = 0. Adicione tamb√©m no
-# gr√°fico as retas y = 2*x + 4 e y = 3*x + 2 com cores diferentes. Construa
-# o gr√°fico omitindo a chamada da fun√ß√£o box(). Dica: construa o gr√°fico
+# ExercÌcio: Use a funÁ„o abline() para adicionar ao gr·fico anterior uma
+# linha vertical em x = 0 e uma horizontal em y = 0. Adicione tambÈm no
+# gr·fico as retas y = 2*x + 4 e y = 3*x + 2 com cores diferentes. Construa
+# o gr·fico omitindo a chamada da funÁ„o box(). Dica: construa o gr·fico
 # com x e y entre -10 e 10.
 
 plot.new()
 plot.window(xlim = c(-10,10), ylim = c(-10,10))
 
 
-# O comando axis() aceita o argumento at, que indica onde as marca√ß√µes no
-# eixo dever√£o ser feitas
+# O comando axis() aceita o argumento at, que indica onde as marcaÁıes no
+# eixo dever„o ser feitas
 axis(1, at = -10:10)
 axis(2, at = -10:10)
 
@@ -39,28 +39,28 @@ grid()
 
 # O comando abline() aceita alguns outros argumentos opcionais:
 # h ou v: gera uma reta horizontal nas coordenadas informadas
-# argumentos gr√°ficos: col (cores), lwd (espessura de linha),
+# argumentos gr·ficos: col (cores), lwd (espessura de linha),
 # lty (tipo de linha), etc.
 
 abline(a = 4, b = 2, col = "red", lwd = 2)
 abline(a = 2, b = 3, col = "blue", lwd = 2)
 abline(h = 0, v = 0, lwd = 2)
 
-title(main = "Gr√°fico de retas")
+title(main = "Gr·fico de retas")
 title(xlab = "Eixo X")
 title(ylab = "Eixo Y")
 
-# OBS: a ordem em que os comandos s√£o executados altera o resultado.
+# OBS: a ordem em que os comandos s„o executados altera o resultado.
 
 
 
 # Operador '...':
-# As retic√™ncias (...) servem para indicar uma lista de argumentos opcionais
-# de uma fun√ß√£o. Os argumentos opcionais s√£o representados tamb√©m
-# por '...' na fun√ß√£o e usados no argumento de fun√ß√µes interiores.
+# As reticÍncias (...) servem para indicar uma lista de argumentos opcionais
+# de uma funÁ„o. Os argumentos opcionais s„o representados tambÈm
+# por '...' na funÁ„o e usados no argumento de funÁıes interiores.
 
 
-# Exemplo 1: f1() recebe dois valores e realiza uma opera√ß√£o com eles antes
+# Exemplo 1: f1() recebe dois valores e realiza uma operaÁ„o com eles antes
 # de plotar um ponto.
 
 f1 <- function(x, y, ...){
@@ -70,7 +70,7 @@ f1 <- function(x, y, ...){
   plot(z, ...)
 }
 
-# Argumentos adicionais podem ser informados, e ser√£o usados pelo
+# Argumentos adicionais podem ser informados, e ser„o usados pelo
 # plot() dentro de f1().
 
 f1(1,1)
@@ -117,8 +117,8 @@ f4(f = f2, y = 2, a = 2, 2,3)
 f4(f = f2, y = 2, a = 2,2,3,2)
 
 
-# Exerc√≠cio: use a fun√ß√£o points() para adicionar ao gr√°fico do exerc√≠cio
-# anterior um ponto na interse√ß√£o das duas retas.
+# ExercÌcio: use a funÁ„o points() para adicionar ao gr·fico do exercÌcio
+# anterior um ponto na intersecÁ„o das duas retas.
 
 # COmandos anteriores:
 plot.new()
@@ -129,7 +129,7 @@ grid()
 abline(a = 4, b = 2, col = "red", lwd = 2)
 abline(a = 2, b = 3, col = "blue", lwd = 2)
 abline(h = 0, v = 0, lwd = 2)
-title(main = "Gr√°fico de retas")
+title(main = "Gr·fico de retas")
 title(xlab = "Eixo X")
 title(ylab = "Eixo Y")
 
@@ -138,9 +138,9 @@ points(x = 2, y = 8, pch = 19, col = "green")
 
 
 
-# Assim como v√°rios comandos R, o points() aceita vetores como argumentos.
-# Isso pode ser usado para representar o gr√°fico de uma fun√ß√£o atrav√©s de
-# uma s√©rie de pontos
+# Assim como v·rios comandos R, o points() aceita vetores como argumentos.
+# Isso pode ser usado para representar o gr·fico de uma funÁ„o atravÈs de
+# uma sÈrie de pontos.
 
 funcao_reta <- function(x) 2*x + 4
 
@@ -156,7 +156,7 @@ line_points <- function(f, n = 50, lower = -10, upper = 10, ...){
   
   abline(h = 0, v = 0, lwd = 2)
 
-  title(main = "Gr√°fico de pontos")
+  title(main = "Gr·fico de pontos")
   title(xlab = "Eixo X")
   title(ylab = "Eixo Y")
   
@@ -166,13 +166,13 @@ line_points <- function(f, n = 50, lower = -10, upper = 10, ...){
 line_points(funcao_reta, col = "purple", pch = 20)
 
 # OBS 1: O uso de rgb() como valor do argumento col permite escolha mais precisa de cores
-# do que simplesmente usar o nome delas. Ele recebe tr√™s valores antre 0 e 1 que
-# representam o brilho de cada uma das cores prim√°rias usada para gerar a resultante.
-# Cores geradas pelo rgb() tamb√©m podem ter sua transpar√™ncia alterada, pelo argumento
-# alpha, tamb√©m um n√∫mero entre 0 e 1.
+# do que simplesmente usar o nome delas. Ele recebe trÍs valores antre 0 e 1 que
+# representam o brilho de cada uma das cores prim·rias usada para gerar a resultante.
+# Cores geradas pelo rgb() tambÈm podem ter sua transparÍncia alterada, pelo argumento
+# alpha, tambÈm um n˙mero entre 0 e 1.
 
-# OBS 2: o argumento cex representa o tamanho relativo de symbolos e texto de gr√°ficos
-# em rela√ß√£o ao normal.
+# OBS 2: o argumento cex representa o tamanho relativo de sÌmbolos e texto de gr·ficos
+# em relaÁ„o ao normal.
 
 line_points(sin, n = 30 , lower = -6, upper = 6,
             col = rgb(0,0,0, alpha = 0.4), pch = 19, cex = 3)
