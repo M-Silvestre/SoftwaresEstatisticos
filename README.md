@@ -62,4 +62,6 @@ Aula 19 (02/09/2019): Arquivos .csv: criação, editação e leitura por comando
 
 Aula 20 (04/09/2019): Introdução a gráficos em R
 
-Aula 21 (10/09/2019): Plotagem de gráficos em R
+Aula 21 (09/09/2019): Plotagem de gráficos em R: eixos e títulos, funções lineares, pontos, parâmetros gráficos
+
+Aula 22 (11/09/2019): Plotagem de gráficos em R: segmentos de retas, textos, margens, funções gerais, símbolos
