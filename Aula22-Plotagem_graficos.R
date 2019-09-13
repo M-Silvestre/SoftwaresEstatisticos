@@ -138,7 +138,7 @@ grid(lwd = 2)
 abline(h = 0, v = 0, lwd = 2)
 axis(1, at = 0:5, cex.axis = .8, font = 1)
 axis(2, at = 0:2, cex.axis = .8, font = 1)
-title(main = "Gráfico de V.A. exponencial")
+title(main = "Gráfico de densidade de V.A. exponencial")
 title(xlab = "Eixo X"); title(ylab = "Eixo Y")
 
 # Nossa função densidade de probabilidade de v.a. exponencial.
@@ -185,7 +185,7 @@ grid(lwd = 2)
 abline(h = 0, v = 0, lwd = 2)
 axis(1, at = -5:5, cex.axis = .8, font = 1)
 axis(2, at = -0:1, cex.axis = .8, font = 1)
-title(main = "Gráfico de V.A. Normal")
+title(main = "Gráfico de densidade de V.A. Normal")
 title(xlab = "Eixo X"); title(ylab = "Eixo Y")
 
 densidade_normal <- function(x, par = c(0,1)){
@@ -196,15 +196,15 @@ densidade_normal <- function(x, par = c(0,1)){
 }
 
 x <- seq(from = -5, to = 5,length.out = 1e3)
-y <- dens_normal(x)
+y <- densidade_normal(x)
 lines(x,y, lwd = 2, col = "red")
 
 x <- seq(from = -5, to = 5,length.out = 1e3)
-y <- dens_normal(x, c(0,0.5))
+y <- densidade_normal(x, c(0,0.5))
 lines(x,y, lwd = 2, col = "purple")
 
 x <- seq(from = -5, to = 5,length.out = 1e3)
-y <- dens_normal(x, c(2,1))
+y <- densidade_normal(x, c(2,1))
 lines(x,y, lwd = 2, col = "blue")
 
 
