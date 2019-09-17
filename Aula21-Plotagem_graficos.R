@@ -103,7 +103,7 @@ f4 <- function(f, y, b, ...){
   n <- ...length()
   
   if(n >= 3)
-    stop("O n√∫mero de argumentos adicionais poder√° ser no m√°ximo 2.")
+    stop("O n˙mero de argumentos adicionais poder· ser no m·ximo 2.")
   if(n == 2)
     ..1 + ..2 # os comandos "..1" e "..2" acessam o valor do primeiro e segundo
               # argumentos opcionais
