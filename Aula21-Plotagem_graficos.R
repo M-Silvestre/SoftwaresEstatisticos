@@ -1,4 +1,4 @@
-# IntroduÃ§Ã£o a softwares estatísticos
+# Introdução a softwares estatísticos
 # Data: 09/09/2019
 # Aula: 21
 # Assunto: Gráficos 
